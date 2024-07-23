@@ -74,7 +74,7 @@ src/
 ```
 
 
-**Descrição:** :heavy_check_mark:
+**Descrição:** :warning:
 <p align="justify">
 
 1. Models: Responsáveis por definir a estrutura dos dados e interagir com o banco de dados. Por exemplo,  o Prisma ORM para a interação com o banco de dados
