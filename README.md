@@ -32,51 +32,53 @@
 src/
 │
 ├── controllers/
-│   └── userController.js
-│   └── bookController.js
-│   └── exchangeController.js
-│   └── messageController.js
-│   └── reviewController.js
+│ └── userController.js
+│ └── bookController.js
+│ └── exchangeController.js
+│ └── messageController.js
+│ └── reviewController.js
 │
 ├── services/
-│   └── userService.js
-│   └── bookService.js
-│   └── exchangeService.js
-│   └── messageService.js
-│   └── reviewService.js
+│ └── userService.js
+│ └── bookService.js
+│ └── exchangeService.js
+│ └── messageService.js
+│ └── reviewService.js
 │
 ├── models/
-│   └── userModel.js
-│   └── bookModel.js
-│   └── exchangeModel.js
-│   └── messageModel.js
-│   └── reviewModel.js
+│ └── userModel.js
+│ └── bookModel.js
+│ └── exchangeModel.js
+│ └── messageModel.js
+│ └── reviewModel.js
 │
 ├── middleware/
-│   └── authMiddleware.js
-│   └── errorMiddleware.js
+│ └── authMiddleware.js
+│ └── errorMiddleware.js
 │
 ├── routes/
-│   └── userRoutes.js
-│   └── bookRoutes.js
-│   └── exchangeRoutes.js
-│   └── messageRoutes.js
-│   └── reviewRoutes.js
+│ └── userRoutes.js
+│ └── bookRoutes.js
+│ └── exchangeRoutes.js
+│ └── messageRoutes.js
+│ └── reviewRoutes.js
 │
 ├── utils/
-│   └── jwt.js
+│ └── jwt.js
 │
 ├── config/
-│   └── db.js
-│   └── prisma.js
+│ └── db.js
+│ └── prisma.js
 │
 └── server.js
+
+
 
 </p>
 
 
 
-**Detalhando:** :heavy_check_mark:
+**Descrição:** :heavy_check_mark:
 <p align="justify">
 
 1. Models: Responsáveis por definir a estrutura dos dados e interagir com o banco de dados. Por exemplo,  o Prisma ORM para a interação com o banco de dados
