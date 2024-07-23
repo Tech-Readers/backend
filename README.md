@@ -26,7 +26,7 @@
 
 ... 
 
-## Arquitetura do Backend :file_folder:
+## Arquitetura do Backend :triangular_ruler: :straight_ruler:
 
 ```plaintext
 src/
