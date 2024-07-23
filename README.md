@@ -28,6 +28,7 @@
 
 ## Arquitetura do Backend :file_folder:
 
+```plaintext
 src/
 │
 ├── controllers/
