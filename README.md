@@ -27,7 +27,6 @@
 ... 
 
 ## Arquitetura do Backend :file_folder:
-<p align="justify">
 
 src/
 │
@@ -71,11 +70,6 @@ src/
 │ └── prisma.js
 │
 └── server.js
-
-
-
-</p>
-
 
 
 **Descrição:** :heavy_check_mark:
