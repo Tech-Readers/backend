@@ -24,6 +24,12 @@
 ## Arquitetura do Backend :triangular_ruler: :straight_ruler:
 
 ```plaintext
+prisma/
+│
+├── migrations
+|
+└── schema.prisma
+
 src/
 │
 ├── controllers/

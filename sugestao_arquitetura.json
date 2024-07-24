@@ -1,5 +1,11 @@
 // SUGESTÃO ARQUITETURA
 
+prisma/
+│
+├── migrations
+|
+└── schema.prisma
+
 src/
 │
 ├── controllers/
