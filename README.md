@@ -18,8 +18,11 @@
 ### Tópicos 
 
 :small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :warning:
+
 :small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
+
 :small_blue_diamond: [Executar app](#executar-app-arrow_forward) 
+
 ... 
 
 ## Arquitetura do Backend :triangular_ruler: :straight_ruler:
