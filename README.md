@@ -82,7 +82,7 @@ src/
 4. **Middleware:** Contêm funções intermediárias que processam as requisições antes de chegarem aos controladores. Usados para autenticação, validação, tratamento de erros, etc. Nele passamos as autenticações de sessão, ou seja, os tokens JWT.
 5. **Routes:** Definem as rotas da aplicação e associam cada rota ao controlador correspondente.
 6. **Utils:** Contêm funções utilitárias que podem ser usadas em diversas partes da aplicação. Por exemplo, geração e verificação de tokens JWT.
-7. **Config:** Contêm arquivos de configuração, como a configuração do banco de dados e do Prisma.
+7. **Config:** Contêm arquivos de configuração, como a configuração do banco de dados, prismaClient.js.
 8. **Server:** Arquivo principal que inicializa o servidor e configura o middleware base.
 
  
