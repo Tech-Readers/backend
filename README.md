@@ -18,7 +18,8 @@
 ### Tópicos 
 
 :small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :warning:
-
+:small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
+:small_blue_diamond: [Executar app](#executar-app-arrow_forward) 
 ... 
 
 ## Arquitetura do Backend :triangular_ruler: :straight_ruler:
@@ -85,7 +86,18 @@ src/
 7. **Config:** Contêm arquivos de configuração, como a configuração do banco de dados, prismaClient.js.
 8. **Server:** Arquivo principal que inicializa o servidor e configura o middleware base.
 
- 
+## Instação das depedências :arrow_down_small:
+
+```bash
+$ npm install
+```
+
+## Executar app :arrow_forward:
+
+```bash
+# development
+$ npm run dev
+```
 ... 
 
 ## Licença 
