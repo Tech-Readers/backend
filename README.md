@@ -62,8 +62,7 @@ src/
 │ └── jwt.js
 │
 ├── config/
-│ └── db.js
-│ └── prisma.js
+│ └── prismaClient.js
 │
 └── server.js
 ```
