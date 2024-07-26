@@ -38,21 +38,18 @@ src/
 │
 ├── controllers/
 │ └── userController.js
-│ └── bookController.js
 │ └── exchangeController.js
 │ └── messageController.js
 │ └── reviewController.js
 │
 ├── services/
 │ └── userService.js
-│ └── bookService.js
 │ └── exchangeService.js
 │ └── messageService.js
 │ └── reviewService.js
 │
 ├── models/
 │ └── userModel.js
-│ └── bookModel.js
 │ └── exchangeModel.js
 │ └── messageModel.js
 │ └── reviewModel.js
@@ -63,7 +60,6 @@ src/
 │
 ├── routes/
 │ └── userRoutes.js
-│ └── bookRoutes.js
 │ └── exchangeRoutes.js
 │ └── messageRoutes.js
 │ └── reviewRoutes.js
