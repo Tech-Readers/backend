@@ -66,35 +66,52 @@ const createUser = async(dataUser) => {
 // atualiza um usuário no banco de dados com base no ID. Inclui a atualização de dados relacionados de enderecos e telefones usando parametro include
 // usa o método update do Prisma Client
 const updateUser = async(id, dataUser) => {
-	return await prisma.usuarios.update({
-		where: {id},
-		data: {
-			nome: dataUser.nome,
-			email: dataUser.email,
-			senha: dataUser.senha,
-			enderecos: {
-				update: {
-					logradouro: dataUser.enderecos.logradouro,
-					numero: dataUser.enderecos.numero,
-					bairro: dataUser.enderecos.bairro,
-					complemento: dataUser.enderecos.complemento,
-					cep: dataUser.enderecos.cep,
-					municipio: dataUser.enderecos.municipio,
-					uf: dataUser.enderecos.uf,
-				},
-			},
-			telefones: {
-				update: dataUser.telefones.map(telefone => ({
-					contato: telefone.contato,
-				})),
-			},
-		},
-		include: {
-			enderecos: true,
-			telefones: true,
-		},
+	// atualiza o usuário
+	const updatedUser = await prisma.usuarios.update({
+	  where: {id},
+	  data: {
+		nome: dataUser.nome,
+		email: dataUser.email,
+		senha: dataUser.senha,
+	  },
+	  include: {
+		enderecos: true,
+		telefones: true,
+	  },
 	});
-};
+  
+	// atualiza os endereços
+	if (dataUser.enderecos) {
+	  await prisma.enderecos.update({
+		where: { id: updatedUser.endereco_id },
+		data: {
+		  logradouro: dataUser.enderecos.logradouro,
+		  numero: dataUser.enderecos.numero,
+		  bairro: dataUser.enderecos.bairro,
+		  complemento: dataUser.enderecos.complemento,
+		  cep: dataUser.enderecos.cep,
+		  municipio: dataUser.enderecos.municipio,
+		  uf: dataUser.enderecos.uf,
+		},
+	  });
+	}
+  
+	// atualiza os telefones
+	if (dataUser.telefones) {
+	  await prisma.telefones.deleteMany({
+		where: { usuario_id: id },
+	  });
+	  await prisma.telefones.createMany({
+		data: dataUser.telefones.map(telefone => ({
+		  contato: telefone.contato,
+		  usuario_id: id,
+		})),
+	  });
+	}
+  
+	return updatedUser;
+  };
+  
 
 // Deleta um usuário no banco de dados com base no ID
 // usa o método delete do Prisma Client

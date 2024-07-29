@@ -1,0 +1,127 @@
+### users.http
+#### USERS
+
+### allUsers
+GET http://localhost:8000/users/
+
+###
+
+### byIdUser
+GET http://localhost:8000/users/f18acf9f-5d78-4f92-8ee9-e358ce2403ee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIxMTY5MiwiZXhwIjoxNzIyMjE1MjkyfQ.kUoPGTDVKX7_YdSy2ZRjOt7PV8S_mFer4L0d09TKqcs
+
+###
+
+### createUser  1
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "nome": "João da Silva",
+    "email": "joao@example.com",
+    "senha": "senha123",
+    "enderecos": {
+        "logradouro": "Rua Exemplo",
+        "numero": "123",
+        "bairro": "Centro",
+        "complemento": "Apto 45",
+        "cep": "12345678",
+        "municipio": "Cidade Exemplo",
+        "uf": "EX"
+    },
+    "telefones": [
+        {
+            "contato": "999999999"
+        }
+    ]
+}
+
+
+###
+
+### Create User 2
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "nome": "Maria Oliveira",
+    "email": "maria@example.com",
+    "senha": "senha1234",
+    "enderecos": {
+        "logradouro": "Avenida Principal",
+        "numero": "456",
+        "bairro": "Bairro Novo",
+        "complemento": "",
+        "cep": "87654321",
+        "municipio": "Outra Cidade",
+        "uf": "OC"
+    },
+    "telefones": [
+        {
+            "contato": "888888888"
+        }
+    ]
+}
+
+
+###
+
+### updateUser
+PUT http://localhost:8000/users/f18acf9f-5d78-4f92-8ee9-e358ce2403ee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIxMTY5MiwiZXhwIjoxNzIyMjE1MjkyfQ.kUoPGTDVKX7_YdSy2ZRjOt7PV8S_mFer4L0d09TKqcs
+Content-Type: application/json
+
+{
+    "nome": "João da Silva",
+    "email": "joao@example.com",
+    "senha": "senha321",
+    "enderecos": {
+        "logradouro": "Rua Exemplo",
+        "numero": "123",
+        "bairro": "Centro novo",
+        "complemento": "Apto 45",
+        "cep": "12345678",
+        "municipio": "Cidade Exemplo novo",
+        "uf": "EX"
+    },
+    "telefones": [
+        {
+            "contato": "2222222"
+        }
+    ]
+}
+
+
+###
+
+
+
+### deleteUser
+DELETE  http://localhost:8000/users/e4c39e52-5b08-4262-91c2-d243f99513e7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YzM5ZTUyLTViMDgtNDI2Mi05MWMyLWQyNDNmOTk1MTNlNyIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjIyMTE1NTIsImV4cCI6MTcyMjIxNTE1Mn0.QIyGAvDOWUYS2t0xpnT1qIttB6gU8DblpJQ2fKLAySA
+
+###
+
+###
+
+
+
+### login
+POST http://localhost:8000/users/login
+Content-Type: application/json
+
+{
+    "email": "joao@example.com",
+    "senha": "senha321"
+}
+
+###
+
+
+### userProfile
+GET http://localhost:8000/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIxMTY5MiwiZXhwIjoxNzIyMjE1MjkyfQ.kUoPGTDVKX7_YdSy2ZRjOt7PV8S_mFer4L0d09TKqcs
+
+###
+
+

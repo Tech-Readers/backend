@@ -26,7 +26,7 @@ const verifyToken = (token) => {
 };
 
 // exporta as funções generateToken e verifyToken para serem usadas em outros módulos do projeto
-export {generateToken, verifyToken};
+export { generateToken, verifyToken };
 
 // OBS:
 // generateToken(user): Quando um usuário faz login ou se registra, gera um token JWT com as informações do usuário. Esse token pode ser enviado ao cliente e armazenado para autenticação futura

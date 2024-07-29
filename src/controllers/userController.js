@@ -20,7 +20,7 @@ const byIdUser = async (req, res) => {
 	try {
 		const user = await userService.byIdUser(req.params.id);
 		if(!user) {
-			res.statu(404).json({error: 'Usuário não encontrado'})
+			res.status(404).json({error: 'Usuário não encontrado'})
 		}
 		const publicUser = {
 			id: user.id,
@@ -57,6 +57,7 @@ const updateUser = async (req, res) => {
 		res.status(500).json({error: error.message});
 	};
 };
+
 
 // chama o serviço deleteUser para excluir o usuário com o ID fornecido
 // retorna status 204 (No Content) em caso de sucesso (sem conteúdo de resposta)

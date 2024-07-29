@@ -1,7 +1,7 @@
 import userModel from '../models/userModel.js';
 import Joi from 'joi';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import { generateToken } from '../utils/jwt.js';
 
 // esquema de validação com Joi: valida os dados do endereço
 const addressSchema = Joi.object({
@@ -75,18 +75,19 @@ const updateUser = async (id, dataUser) => {
   const user = await userModel.byIdUser(id);
   if (!user) throw new Error('Usuário não encontrado.');
 
-	const existingUser = await userModel.byEmailUser(dataUser.email);
-	if (existingUser && existingUser.id !== id) {
-		throw new Error('E-mail já está em uso!');
-	};
+  const existingUser = await userModel.byEmailUser(dataUser.email);
+  if (existingUser && existingUser.id !== id) {
+    throw new Error('E-mail já está em uso!');
+  };
 
-	if(dataUser.senha) {
-		const hashedPassword = await bcrypt.hash(dataUser.senha, 10);
-		dataUser.senha = hashedPassword;
-	}
+  if (dataUser.senha) {
+    const hashedPassword = await bcrypt.hash(dataUser.senha, 10);
+    dataUser.senha = hashedPassword;
+  }
 
   return await userModel.updateUser(id, dataUser);
 };
+
 
 // valida o ID, verifica se o usuário existe, e deleta o usuário do banco de dados
 const deleteUser = async (id) => {
@@ -114,7 +115,7 @@ const login = async (email, senha) => {
     throw new Error('Senha inválida');
   }
 
-  const token = jwt.generateToken(user);
+  const token = generateToken(user);
   return { user, token };
 };
 
