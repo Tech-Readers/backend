@@ -16,6 +16,8 @@ const authMiddleware = async (req, res, next) => {
 			where: {id: decoded.id},
 			select: {id: true, nome: true, email: true},
 		});
+		
+		
 		next();
 	} catch (error) {
 		res.status(401).json({error: 'Token inválido.'});

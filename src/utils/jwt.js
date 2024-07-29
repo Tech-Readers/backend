@@ -31,3 +31,6 @@ export { generateToken, verifyToken };
 // OBS:
 // generateToken(user): Quando um usuário faz login ou se registra, gera um token JWT com as informações do usuário. Esse token pode ser enviado ao cliente e armazenado para autenticação futura
 // verifyToken(token): Quando uma solicitação é recebida, pode ser usada para verificar se o token JWT fornecido é válido e não expirou, garantindo que a solicitação foi feita por um usuário autenticado
+
+
+

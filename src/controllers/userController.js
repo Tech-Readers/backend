@@ -91,23 +91,23 @@ const login = async (req, res) => {
 const userProfile = async (req, res) => {
 	try {
 		const user = await userService.byIdUser(req.user.id);
-		if(user) {
-			res.status(200).json(user);
-		}else {
-			res.status(404).json({error: 'Usuário não encontrado!'})
+		if (!user) {
+		  return res.status(404).json({ error: 'Usuário não encontrado' });
 		}
-	} catch (error) {
-		res.status(500).json({error: error.message});
-	};
+		res.status(200).json(user);
+	  } catch (error) {
+		res.status(500).json({ error: error.message });
+	  }
 };
+
 
 // exporta todas as funções do controlador para serem usadas em outras partes da aplicação, como nas rotas
 const userController = {
 	allUsers,
-  byIdUser,
-  createUser,
-  updateUser,
-  deleteUser,
+  	byIdUser,
+  	createUser,
+ 	updateUser,
+  	deleteUser,
 	login,
 	userProfile,
 }
