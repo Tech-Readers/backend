@@ -7,8 +7,8 @@ GET http://localhost:8000/users/
 ###
 
 ### byIdUser
-GET http://localhost:8000/users/f18acf9f-5d78-4f92-8ee9-e358ce2403ee
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIyMjc2NCwiZXhwIjoxNzIyMjI2MzY0fQ.w_N-O2UypzV5wuv4NDVi75dAbiFGCT5UdBp6uYatrlI
+GET http://localhost:8000/users/97f0b868-e468-4de2-bd40-43a8282f86c4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3ZjBiODY4LWU0NjgtNGRlMi1iZDQwLTQzYTgyODJmODZjNCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI2OTQ1NCwiZXhwIjoxNzIyMjczMDU0fQ.2K2d3Esz2zVf8oE-XyjqS3sqJFBoVP_rMbMPHWpD6Rc
 
 ###
 
@@ -67,16 +67,16 @@ Content-Type: application/json
 ###
 
 ### updateUser
-PUT http://localhost:8000/users/f18acf9f-5d78-4f92-8ee9-e358ce2403ee
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIxMTY5MiwiZXhwIjoxNzIyMjE1MjkyfQ.kUoPGTDVKX7_YdSy2ZRjOt7PV8S_mFer4L0d09TKqcs
+PUT http://localhost:8000/users/f7701451-0f13-4305-bbb6-70092baab43f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzAxNDUxLTBmMTMtNDMwNS1iYmI2LTcwMDkyYmFhYjQzZiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI3MDYyNSwiZXhwIjoxNzIyMjc0MjI1fQ.c9fKU_xZy7iKf1F-C3xCfpbLoZ1ffftimGQhvS_gWfc
 Content-Type: application/json
 
 {
     "nome": "João da Silva",
     "email": "joao@example.com",
-    "senha": "senha321",
+    "senha": "senha123",
     "enderecos": {
-        "logradouro": "Rua Exemplo",
+        "logradouro": "Rua Exemplo novo",
         "numero": "123",
         "bairro": "Centro novo",
         "complemento": "Apto 45",
@@ -97,10 +97,10 @@ Content-Type: application/json
 
 
 ### deleteUser
-DELETE  http://localhost:8000/users/e4c39e52-5b08-4262-91c2-d243f99513e7
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YzM5ZTUyLTViMDgtNDI2Mi05MWMyLWQyNDNmOTk1MTNlNyIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjIyMTE1NTIsImV4cCI6MTcyMjIxNTE1Mn0.QIyGAvDOWUYS2t0xpnT1qIttB6gU8DblpJQ2fKLAySA
+DELETE http://localhost:8000/users/f7701451-0f13-4305-bbb6-70092baab43f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzAxNDUxLTBmMTMtNDMwNS1iYmI2LTcwMDkyYmFhYjQzZiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI3MDYyNSwiZXhwIjoxNzIyMjc0MjI1fQ.c9fKU_xZy7iKf1F-C3xCfpbLoZ1ffftimGQhvS_gWfc
 
-###
+
 
 ###
 
@@ -112,7 +112,7 @@ Content-Type: application/json
 
 {
     "email": "joao@example.com",
-    "senha": "senha321"
+    "senha": "senha123"
 }
 
 ###
@@ -120,8 +120,8 @@ Content-Type: application/json
 
 ### userProfile
 GET http://localhost:8000/users/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjIyMjc2NCwiZXhwIjoxNzIyMjI2MzY0fQ.w_N-O2UypzV5wuv4NDVi75dAbiFGCT5UdBp6uYatrlI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI2NDY5MywiZXhwIjoxNzIyMjY4MjkzfQ.OU3md2omk7tMReYaHzA7TvJSCV2uwHM3sbRRwSQcJyI
 
-###
+
 
 

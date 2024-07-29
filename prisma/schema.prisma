@@ -1,3 +1,5 @@
+//schema.prisma:
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -47,7 +49,7 @@ model enderecos {
   cep         String     @db.Char(8)
   municipio   String     @db.VarChar(255)
   uf          String     @db.Char(2)
-  usuarios    usuarios[]
+  usuarios    usuarios?  @relation(fields: [id], references: [endereco_id], onDelete: Cascade)
 }
 
 model mensagens {
@@ -85,3 +87,4 @@ model usuarios {
   telefones                                             telefones[]
   enderecos                                             enderecos?   @relation(fields: [endereco_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
+

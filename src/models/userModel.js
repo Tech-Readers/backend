@@ -1,3 +1,4 @@
+// src/models/userModel.js:
 import prisma from '../config/prismaClient.js';
 
 // busca um usuario no banco de dados com base no email
@@ -116,10 +117,39 @@ const updateUser = async(id, dataUser) => {
 // Deleta um usuário no banco de dados com base no ID
 // usa o método delete do Prisma Client
 const deleteUser = async(id) => {
-	return await prisma.usuarios.delete({
-		where: {id}
+	// Busca o usuário e seus endereços
+	const user = await prisma.usuarios.findUnique({
+	  where: { id },
+	  include: { enderecos: true },
 	});
+  
+	if (user) {
+	  // Deleta os telefones associados ao usuário
+	  await prisma.telefones.deleteMany({
+		where: { usuario_id: id },
+	  });
+  
+	  // Deleta o usuário
+	  await prisma.usuarios.delete({
+		where: { id },
+	  });
+  
+	  // Verifica se o endereço associado ainda está em uso por outros usuários
+	  const enderecoEmUso = await prisma.usuarios.findMany({
+		where: { endereco_id: user.endereco_id },
+	  });
+  
+	  if (enderecoEmUso.length === 0) {
+		// Se o endereço não estiver mais em uso, deleta o endereço
+		await prisma.enderecos.delete({
+		  where: { id: user.endereco_id },
+		});
+	  }
+	}
+  
+	return user;
 };
+  
 
 // As funções são agrupadas em um objeto userModel e
 // exportadas para que possam ser usadas em outras partes da aplicação.
