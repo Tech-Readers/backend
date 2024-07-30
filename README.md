@@ -85,6 +85,42 @@ src/
 7. **Config:** Contêm arquivos de configuração, como a configuração do banco de dados, prismaClient.js.
 8. **Server:** Arquivo principal que inicializa o servidor e configura o middleware base.
 
+
+
+**Rotas:** :warning:
+1. **Usuarios:**
+  -	GET /users: Retorna todos os usuários;
+  -	GET /users/{id}: Retorna um usuário específico de acordo com ID do usuário;
+  -	POST /users: Cadastra um novo usuário;
+  -	PUT /users/{id}: Atualiza os dados de um usuário específico de acordo com o ID do usuário;
+  -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário.
+
+
+2. **Anuncios:**
+  -	GET /exchanges: Retorna todos os anúncios;
+  -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
+  -	GET /users/{id_user}/exchanges: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
+  -	POST /exchanges: Cria um novo anúncio;
+  -	PATH /exchanges/{id}/close: Fecha um anúncio (anúncio passa do estado ativo para inativo, altera "ativo: TRUE" para "ativo: FALSE" e insere o valor da “data_conclusao”);
+  -	PUT /exchanges/{id}: Atualiza os dados de um anúncio específico de acordo com o ID do anúncio;
+  -	DELETE /exchanges/{id}: Deleta os dados de um anúncio específico de acordo com o ID do anúncio.
+
+
+
+3. **Mensagens:**
+  -	GET /exchanges/{id_exchange}/messages: Retorna todas as mensagens referentes a um anúncio específico de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
+  -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
+  -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
+
+
+4. **Avaliacoes:**
+  -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
+  -	GET /exchanges/{id_exchange}/reviews: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
+  -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
+  -	PUT /reviews/{id}: Altera uma avaliação;
+  -	DELETE /reviews/{id}: Deleta uma avaliação.
+
+
 ## Instação das depedências :arrow_down_small:
 
 ```bash
