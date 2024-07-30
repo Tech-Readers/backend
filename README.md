@@ -91,7 +91,7 @@ src/
 
 ## Rotas - EndPoints :arrows_clockwise:
 
-1. **Usuarios:** :warning:
+1. **Usuarios:** :heavy_check_mark:
   -	GET /users: Retorna todos os usuários;
   -	GET /users/{id}: Retorna um usuário específico de acordo com ID do usuário;
   -	POST /users: Cadastra um novo usuário;
