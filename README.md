@@ -117,8 +117,8 @@ src/
   -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
   -	GET /exchanges/{id_exchange}/reviews: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
   -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
-  -	PUT /reviews/{id}: Altera uma avaliação;
-  -	DELETE /reviews/{id}: Deleta uma avaliação.
+  -	PUT /reviews/{id}: Altera os dados de uma avaliação específica de acordo com ID da avaliação;
+  -	DELETE /reviews/{id}: Deleta os dados de uma avaliação específica de acordo com ID da avaliação.
 
 
 ## Instação das depedências :arrow_down_small:
