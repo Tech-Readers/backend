@@ -19,7 +19,7 @@
 
 :small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :warning:
 
-:small_blue_diamond: [Rotas - EndPoints](#Rotas-EndPoints-:rora_duas-maos:) :warning:
+:small_blue_diamond: [Rotas - EndPoints](#Rotas---EndPoints-:rora_duas-maos:) :warning:
 
 :small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
 
