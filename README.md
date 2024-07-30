@@ -19,6 +19,8 @@
 
 :small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :warning:
 
+:small_blue_diamond: [Rotas - EndPoints](#Rotas-EndPoints-:rora_duas-maos:) :warning:
+
 :small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
 
 :small_blue_diamond: [Executar app](#executar-app-arrow_forward) 
@@ -87,8 +89,9 @@ src/
 
 
 
-**Rotas:** :warning:
-1. **Usuarios:**
+## Rotas - EndPoints :rora_duas-maos:
+
+1. **Usuarios:** :warning:
   -	GET /users: Retorna todos os usuários;
   -	GET /users/{id}: Retorna um usuário específico de acordo com ID do usuário;
   -	POST /users: Cadastra um novo usuário;
@@ -96,7 +99,7 @@ src/
   -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário.
 
 
-2. **Anuncios:**
+2. **Anuncios:** :warning:
   -	GET /exchanges: Retorna todos os anúncios;
   -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
   -	GET /users/{id_user}/exchanges: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
@@ -107,13 +110,13 @@ src/
 
 
 
-3. **Mensagens:**
+3. **Mensagens:** :warning:
   -	GET /exchanges/{id_exchange}/messages: Retorna todas as mensagens referentes a um anúncio específico de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
   -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
   -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
 
 
-4. **Avaliacoes:**
+4. **Avaliacoes:** :warning:
   -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
   -	GET /exchanges/{id_exchange}/reviews: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
   -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
