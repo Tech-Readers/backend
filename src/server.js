@@ -27,7 +27,9 @@ app.use(express.json());
 app.use('/users', routerUsers);
 
 app.use('/exchanges', routerExchange); // NÃO IMPLEMENTADO AS ROTAS DE ANUNCIOS
+
 // app.use('/messages', routerMessage); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
+
 // app.use('/reviews', routerReview); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
 
