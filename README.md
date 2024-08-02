@@ -61,10 +61,10 @@ src/
 │ └── errorMiddleware.js
 │
 ├── routes/
-│ └── userRoutes.js
-│ └── exchangeRoutes.js
-│ └── messageRoutes.js
-│ └── reviewRoutes.js
+│ └── routerUser.js
+│ └── routerExchange.js
+│ └── routerMessage.js
+│ └── routerReview.js
 │
 ├── utils/
 │ └── jwt.js
