@@ -128,6 +128,9 @@ src/
 
 ```bash
 $ npm install
+$ npx prisma generate
+$ npx prisma migrate dev --name init
+
 ```
 
 ## Executar app :arrow_forward:
