@@ -1,19 +1,19 @@
 import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios
-const getAllExchanges = async () => {
+const allExchanges = async () => {
   return await prisma.exchanges.findMany();
 };
 
 // Retorna um anúncio específico de acordo com o ID do anúncio
-const getExchangeById = async (id) => {
+const exchangeById = async (id) => {
   return await prisma.exchanges.findUnique({
     where: { id },
   });
 };
 
 // Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário
-const getExchangesByUserId = async (userId) => {
+const exchangesByUserId = async (userId) => {
   return await prisma.exchanges.findMany({
     where: { userId },
   });
@@ -53,9 +53,9 @@ const deleteExchange = async (id) => {
 };
 
 const exchangeModel = {
-  getAllExchanges,
-  getExchangeById,
-  getExchangesByUserId,
+  allExchanges,
+  exchangeById,
+  exchangesByUserId,
   createExchange,
   closeExchange,
   updateExchange,
