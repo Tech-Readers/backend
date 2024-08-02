@@ -52,7 +52,7 @@ const deleteExchange = async (id) => {
   });
 };
 
-export {
+const exchangeMode = {
   getAllExchanges,
   getExchangeById,
   getExchangesByUserId,
@@ -61,3 +61,5 @@ export {
   updateExchange,
   deleteExchange,
 };
+
+export default exchangeMode;

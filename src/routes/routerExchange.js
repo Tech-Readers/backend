@@ -1,5 +1,6 @@
+// routerExchange.js
 import express from 'express';
-import exchangeController from '../controllers/exchangeController';
+import exchangeController from '../controllers/exchangeController.js';
 
 
 //Cria uma instância do router do express para definir as rotas relacionadas aos anuncios
@@ -15,15 +16,15 @@ routerExchange.get('/:id', exchangeController.byIdExchange);
 routerExchange.get('/:userId',exchangeController.exchangesByUserId);
 
 // POST / --> Cria um novo anuncio
-routerExchange.post('/',exchangeController.createExchange);
+routerExchange.post('/', exchangeController.createExchange);
 
 
 // PUT /:id --> Atualiza os dados de um anúncio específico de acordo com o ID do anúncio
-routerExchange.put('/:id',exchangeController.updateExchange);
+routerExchange.put('/:id', exchangeController.updateExchange);
 
 
 // DELETE /:id --> Deleta os dados de um anúncio específico de acordo com o ID do anúncio;
-routerExchange.delete('/:id',exchangeController.deleteExchange);
+routerExchange.delete('/:id', exchangeController.deleteExchange);
 
 
 // PATH /:id --> Fecha um anúncio (anúncio passa do estado ativo para inativo, 
@@ -31,3 +32,6 @@ routerExchange.delete('/:id',exchangeController.deleteExchange);
 routerExchange.patch('/:id',exchangeController.closeExchange);
 
 export default routerExchange;
+
+
+

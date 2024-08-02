@@ -1,7 +1,9 @@
+// server.js
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import userRouters from './routes/userRouters.js';
+import routerUsers from './routes/routerUsers.js'
+import routerExchange from './routes/routerExchange.js';
 
 // dotenv para carregar variáveis de ambiente de um arquivo
 dotenv.config();
@@ -22,9 +24,9 @@ app.use(cors());
 app.use(express.json());
 
 // define que todas as rotas relacionadas aos usuários estarão no caminho /users e serão tratadas pelas rotas definidas em userRouters
-app.use('/users', userRouters);
+app.use('/users', routerUsers);
 
-// app.use('/exchanges', exchangesRouters); // NÃO IMPLEMENTADO AS ROTAS DE ANUNCIOS
+app.use('/exchanges', routerExchange); // NÃO IMPLEMENTADO AS ROTAS DE ANUNCIOS
 // app.use('/messages', messagesRouters); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
 // app.use('/reviews', reviewsRouters); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
@@ -33,3 +35,8 @@ app.use('/users', userRouters);
 app.listen(PORT, () => {
 	console.log(`Servidor rodando na porta ${PORT}`)
 })
+
+
+
+
+
