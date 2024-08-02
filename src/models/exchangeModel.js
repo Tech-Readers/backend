@@ -2,33 +2,33 @@ import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios
 const allExchanges = async () => {
-  return await prisma.exchanges.findMany();
+  return await prisma.anuncios.findMany();
 };
 
 // Retorna um anúncio específico de acordo com o ID do anúncio
 const exchangeById = async (id) => {
-  return await prisma.exchanges.findUnique({
+  return await prisma.anuncios.findUnique({
     where: { id },
   });
 };
 
 // Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário
 const exchangesByUserId = async (userId) => {
-  return await prisma.exchanges.findMany({
+  return await prisma.anuncios.findMany({
     where: { userId },
   });
 };
 
 // Cria um novo anúncio
 const createExchange = async (data) => {
-  return await prisma.exchanges.create({
+  return await prisma.anuncios.create({
     data,
   });
 };
 
 // Fecha um anúncio (anúncio passa do estado ativo para inativo)
 const closeExchange = async (id) => {
-  return await prisma.exchanges.update({
+  return await prisma.anuncios.update({
     where: { id },
     data: {
       ativo: false,
@@ -38,16 +38,20 @@ const closeExchange = async (id) => {
 };
 
 // Atualiza os dados de um anúncio específico de acordo com o ID do anúncio
-const updateExchange = async (id, data) => {
-  return await prisma.exchanges.update({
+const updateExchange = async (id, dataExchange) => {
+  const updateExchange = await prisma.anuncios.update({
     where: { id },
-    data,
+    data: {
+      autor_livro_oferecido: dataExchange.autor_livro_oferecido,
+      genero_livro_oferecido: dataExchange.genero_livro_oferecido,
+    },
   });
+  return updateExchange;
 };
 
 // Deleta os dados de um anúncio específico de acordo com o ID do anúncio
 const deleteExchange = async (id) => {
-  return await prisma.exchanges.delete({
+  return await prisma.anuncios.delete({
     where: { id },
   });
 };

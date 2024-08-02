@@ -1,14 +1,22 @@
+import { join } from '@prisma/client/runtime/library';
 import exchangeModel from '../models/exchangeModel.js';
 import Joi from 'joi';
 
 // Esquema de validação com Joi: valida os dados do anúncio
 const exchangeSchema = Joi.object({
-  titulo: Joi.string().required(),
-  descricao: Joi.string().required(),
-  preco: Joi.number().positive().required(),
-  categoria: Joi.string().required(),
+  id: Joi.string().required(),
+  data_criacao: Joi.string().required(),
+  data_conclusao: Joi.string().required(),
   ativo: Joi.boolean().required(),
-  data_conclusao: Joi.date().allow(null),
+  titulo: Joi.string().required(),
+  titulo_livro_oferecido: Joi.string().required(),
+  autor_livro_oferecido: Joi.string().required(),
+  genero_livro_oferecido: Joi.string().required(),
+  titulo_livro_solicitado: Joi.string().required(),
+  autor_livro_solicitado: Joi.string().required(),
+  genero_livro_solicidado: Joi.string().required(),
+  descricao: Joi.string().required(),
+  anunciante_id: Joi.string().required()
 });
 
 // Retorna todos os anúncios do banco de dados
@@ -47,16 +55,20 @@ const createExchange = async (dataExchange) => {
 const updateExchange = async (id, dataExchange) => {
   if (!id) throw new Error('ID é obrigatório.');
 
+  // Valida os dados do anúncio
   const { error } = exchangeSchema.validate(dataExchange);
   if (error) {
     throw new Error(error.details.map((detail) => detail.message).join(' '));
   }
 
-  const exchange = await exchangeModel.byIdExchange(id);
+  // Verifica se o anúncio existe
+  const exchange = await exchangeModel.findById(id); // Ajuste a função conforme seu modelo
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
+  // Atualiza o anúncio
   return await exchangeModel.updateExchange(id, dataExchange);
 };
+
 
 // Valida o ID, verifica se o anúncio existe, e deleta o anúncio do banco de dados
 const deleteExchange = async (id) => {
