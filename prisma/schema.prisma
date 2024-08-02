@@ -47,7 +47,7 @@ model enderecos {
   cep         String     @db.Char(8)
   municipio   String     @db.VarChar(255)
   uf          String     @db.Char(2)
-  usuarios    usuarios
+  usuarios    usuarios?  // Remove os argumentos `@relation` daqui
 }
 
 model mensagens {
