@@ -97,10 +97,10 @@ src/
   -	POST /users: Cadastra um novo usuário;
   -	PUT /users/{id}: Atualiza os dados de um usuário específico de acordo com o ID do usuário;
   -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário;
-  - POST /users/login: Cria um token de autenticação do usuário.
+  - POST /users/login: Autentica um usuário e retorna o token JWT.
 
 
-2. **Anuncios:** :warning:
+1. **Anuncios:** :warning:
   -	GET /exchanges: Retorna todos os anúncios;
   -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
   -	GET /users/{id_user}/exchanges: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
