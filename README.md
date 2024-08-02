@@ -96,7 +96,8 @@ src/
   -	GET /users/{id}: Retorna um usuário específico de acordo com ID do usuário;
   -	POST /users: Cadastra um novo usuário;
   -	PUT /users/{id}: Atualiza os dados de um usuário específico de acordo com o ID do usuário;
-  -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário.
+  -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário;
+  - POST /users/login: Cria um token de autenticação do usuário.
 
 
 2. **Anuncios:** :warning:

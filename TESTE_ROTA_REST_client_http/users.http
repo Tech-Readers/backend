@@ -7,8 +7,8 @@ GET http://localhost:8000/users/
 ###
 
 ### byIdUser
-GET http://localhost:8000/users/97f0b868-e468-4de2-bd40-43a8282f86c4
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3ZjBiODY4LWU0NjgtNGRlMi1iZDQwLTQzYTgyODJmODZjNCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI2OTQ1NCwiZXhwIjoxNzIyMjczMDU0fQ.2K2d3Esz2zVf8oE-XyjqS3sqJFBoVP_rMbMPHWpD6Rc
+GET http://localhost:8000/users/a53af9ac-7b40-4a7e-8c6a-3ef34000d50b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE1M2FmOWFjLTdiNDAtNGE3ZS04YzZhLTNlZjM0MDAwZDUwYiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMzE0OSwiZXhwIjoxNzIyNjA2NzQ5fQ.9w1JBo2UaSLEoTFhROwGrmt_ifONForW-ntA6NBlSgQ
 
 ###
 
@@ -67,8 +67,8 @@ Content-Type: application/json
 ###
 
 ### updateUser
-PUT http://localhost:8000/users/f7701451-0f13-4305-bbb6-70092baab43f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzAxNDUxLTBmMTMtNDMwNS1iYmI2LTcwMDkyYmFhYjQzZiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI3MDYyNSwiZXhwIjoxNzIyMjc0MjI1fQ.c9fKU_xZy7iKf1F-C3xCfpbLoZ1ffftimGQhvS_gWfc
+PUT http://localhost:8000/users/0ed39f27-1009-4b5e-aacc-8258f4bc4544
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBlZDM5ZjI3LTEwMDktNGI1ZS1hYWNjLTgyNThmNGJjNDU0NCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMjc0OSwiZXhwIjoxNzIyNjA2MzQ5fQ.5KQBCVLm647KfF8MkdoGE8rQYGQfI5XU6NP1n89RuB0
 Content-Type: application/json
 
 {
@@ -95,10 +95,9 @@ Content-Type: application/json
 ###
 
 
-
 ### deleteUser
-DELETE http://localhost:8000/users/f7701451-0f13-4305-bbb6-70092baab43f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzAxNDUxLTBmMTMtNDMwNS1iYmI2LTcwMDkyYmFhYjQzZiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI3MDYyNSwiZXhwIjoxNzIyMjc0MjI1fQ.c9fKU_xZy7iKf1F-C3xCfpbLoZ1ffftimGQhvS_gWfc
+DELETE http://localhost:8000/users/0ed39f27-1009-4b5e-aacc-8258f4bc4544
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBlZDM5ZjI3LTEwMDktNGI1ZS1hYWNjLTgyNThmNGJjNDU0NCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMjc0OSwiZXhwIjoxNzIyNjA2MzQ5fQ.5KQBCVLm647KfF8MkdoGE8rQYGQfI5XU6NP1n89RuB0
 
 
 
@@ -120,7 +119,7 @@ Content-Type: application/json
 
 ### userProfile
 GET http://localhost:8000/users/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxOGFjZjlmLTVkNzgtNGY5Mi04ZWU5LWUzNThjZTI0MDNlZSIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjI2NDY5MywiZXhwIjoxNzIyMjY4MjkzfQ.OU3md2omk7tMReYaHzA7TvJSCV2uwHM3sbRRwSQcJyI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE1M2FmOWFjLTdiNDAtNGE3ZS04YzZhLTNlZjM0MDAwZDUwYiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMzE0OSwiZXhwIjoxNzIyNjA2NzQ5fQ.9w1JBo2UaSLEoTFhROwGrmt_ifONForW-ntA6NBlSgQ
 
 
 
