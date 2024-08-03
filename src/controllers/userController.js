@@ -6,7 +6,16 @@ import userService from '../services/userService.js'
 const allUsers = async (req, res) => {
 	try {
 		const users = await userService.allUsers();
-		res.status(200).json(users);
+
+		// remover a senha de cada usuário para ser exibido a lista de usuarios
+		const usersWithoutPassword = users.map(user => {
+			const { senha, ...userWithoutPassword } = user;
+			return userWithoutPassword;
+		});
+	  
+		res.status(200).json(usersWithoutPassword);
+
+		// res.status(200).json(users);
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
