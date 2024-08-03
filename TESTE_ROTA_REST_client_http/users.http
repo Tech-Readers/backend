@@ -3,12 +3,13 @@
 
 ### allUsers
 GET http://localhost:8000/users/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI3MTQ5MTQsImV4cCI6MTcyMjcxODUxNH0.P8xsIg8eRKH9iBmIBZEqgdBZjwNo2y26B5Qt4Wl-g3g
 
 ###
 
 ### byIdUser
-GET http://localhost:8000/users/a53af9ac-7b40-4a7e-8c6a-3ef34000d50b
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE1M2FmOWFjLTdiNDAtNGE3ZS04YzZhLTNlZjM0MDAwZDUwYiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYyNTc1NSwiZXhwIjoxNzIyNjI5MzU1fQ.EUsR3dJ-WoGtcddJVevxEtAeh7n3boIWn3sd4yXIapA
+GET http://localhost:8000/users/01b9370a-2aa7-4194-8e7a-a8a374b19288
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI3MTQ5MTQsImV4cCI6MTcyMjcxODUxNH0.P8xsIg8eRKH9iBmIBZEqgdBZjwNo2y26B5Qt4Wl-g3g
 
 ###
 
@@ -67,12 +68,12 @@ Content-Type: application/json
 ###
 
 ### updateUser
-PUT http://localhost:8000/users/0ed39f27-1009-4b5e-aacc-8258f4bc4544
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBlZDM5ZjI3LTEwMDktNGI1ZS1hYWNjLTgyNThmNGJjNDU0NCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMjc0OSwiZXhwIjoxNzIyNjA2MzQ5fQ.5KQBCVLm647KfF8MkdoGE8rQYGQfI5XU6NP1n89RuB0
+PUT http://localhost:8000/users/90cfefd0-6854-4ad0-8faa-3b1c29b41a17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwY2ZlZmQwLTY4NTQtNGFkMC04ZmFhLTNiMWMyOWI0MWExNyIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjcxNDc2MiwiZXhwIjoxNzIyNzE4MzYyfQ.1TOt4K8-liy_pPc-hWqOxIod-dypWq_Q4QXs20gJ44Q
 Content-Type: application/json
 
 {
-    "nome": "João da Silva",
+    "nome": "João da Silva Novo",
     "email": "joao@example.com",
     "senha": "senha123",
     "enderecos": {
@@ -96,8 +97,9 @@ Content-Type: application/json
 
 
 ### deleteUser
-DELETE http://localhost:8000/users/0ed39f27-1009-4b5e-aacc-8258f4bc4544
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBlZDM5ZjI3LTEwMDktNGI1ZS1hYWNjLTgyNThmNGJjNDU0NCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYwMjc0OSwiZXhwIjoxNzIyNjA2MzQ5fQ.5KQBCVLm647KfF8MkdoGE8rQYGQfI5XU6NP1n89RuB0
+DELETE http://localhost:8000/users/90cfefd0-6854-4ad0-8faa-3b1c29b41a17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwY2ZlZmQwLTY4NTQtNGFkMC04ZmFhLTNiMWMyOWI0MWExNyIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjcxNDc2MiwiZXhwIjoxNzIyNzE4MzYyfQ.1TOt4K8-liy_pPc-hWqOxIod-dypWq_Q4QXs20gJ44Q
+
 
 
 
@@ -110,8 +112,8 @@ POST http://localhost:8000/users/login
 Content-Type: application/json
 
 {
-    "email": "joao@example.com",
-    "senha": "senha123"
+    "email": "maria@example.com",
+    "senha": "senha1234"
 }
 
 ###
@@ -119,7 +121,7 @@ Content-Type: application/json
 
 ### userProfile
 GET http://localhost:8000/users/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE1M2FmOWFjLTdiNDAtNGE3ZS04YzZhLTNlZjM0MDAwZDUwYiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjYyNTc1NSwiZXhwIjoxNzIyNjI5MzU1fQ.EUsR3dJ-WoGtcddJVevxEtAeh7n3boIWn3sd4yXIapA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwY2ZlZmQwLTY4NTQtNGFkMC04ZmFhLTNiMWMyOWI0MWExNyIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjcxMTcyMCwiZXhwIjoxNzIyNzE1MzIwfQ.D_IitVpxk7wLKSUIMlZSw_7aTzIKU4_vgt47ltac6FA
 
 
 

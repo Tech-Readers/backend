@@ -22,13 +22,7 @@ const byIdUser = async (req, res) => {
 		if(!user) {
 			res.status(404).json({error: 'Usuário não encontrado'})
 		}
-		const publicUser = {
-			id: user.id,
-			nome: user.nome,
-			email: user.email
-		};
-
-		res.status(200).json(publicUser);
+		res.status(200).json(user);
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
@@ -78,27 +72,12 @@ const login = async (req, res) => {
 	try {
 		const {email, senha} = req.body;
 		const {user, token} = await userService.login(email, senha);
-		res.status(200).json({user, token});
+		res.status(200).json({id: user.id, nome: user.nome, token});
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
 };
 
-// chama o serviço byIdUser para obter o perfil do usuário autenticado (usando req.user.id)
-// retorna o perfil do usuário com status 200 (OK) em caso de sucesso
-// retorna status 404 (Not Found) se o usuário não for encontrado
-// retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha
-const userProfile = async (req, res) => {
-	try {
-		const user = await userService.byIdUser(req.user.id);
-		if (!user) {
-		  return res.status(404).json({ error: 'Usuário não encontrado' });
-		}
-		res.status(200).json(user);
-	  } catch (error) {
-		res.status(500).json({ error: error.message });
-	  }
-};
 
 
 // exporta todas as funções do controlador para serem usadas em outras partes da aplicação, como nas rotas
@@ -109,7 +88,6 @@ const userController = {
  	updateUser,
   	deleteUser,
 	login,
-	userProfile,
 }
 
 export default userController;
