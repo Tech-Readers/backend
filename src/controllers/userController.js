@@ -7,13 +7,13 @@ const allUsers = async (req, res) => {
 	try {
 		const users = await userService.allUsers();
 
-		// remover a senha de cada usuário para ser exibido a lista de usuarios sem as senhas
-		const usersWithoutPassword = users.map(user => {
-			const { senha, ...userWithoutPassword } = user;
-			return userWithoutPassword;
+		// remover a senha, endereço e telefones de cada usuário para ser exibido a lista de usuarios sem esses dados sensiveis
+		const usersPublic = users.map(user => {
+			const { senha, enderecos, endereco_id, telefones, ...userPublic } = user;
+			return userPublic;
 		});
 	  
-		res.status(200).json(usersWithoutPassword);
+		res.status(200).json(usersPublic);
 
 		// res.status(200).json(users);
 	} catch (error) {
