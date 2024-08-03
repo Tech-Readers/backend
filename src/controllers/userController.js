@@ -7,7 +7,7 @@ const allUsers = async (req, res) => {
 	try {
 		const users = await userService.allUsers();
 
-		// remover a senha de cada usuário para ser exibido a lista de usuarios
+		// remover a senha de cada usuário para ser exibido a lista de usuarios sem as senhas
 		const usersWithoutPassword = users.map(user => {
 			const { senha, ...userWithoutPassword } = user;
 			return userWithoutPassword;
