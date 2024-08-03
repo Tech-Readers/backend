@@ -1,4 +1,3 @@
-// src/models/userModel.js:
 import prisma from '../config/prismaClient.js';
 
 // busca um usuario no banco de dados com base no email
@@ -75,10 +74,10 @@ const updateUser = async(id, dataUser) => {
 		email: dataUser.email,
 		senha: dataUser.senha,
 	  },
-	  include: {
-		enderecos: true,
-		telefones: true,
-	  },
+	//   include: {
+	// 	enderecos: true,
+	// 	telefones: true,
+	//   },
 	});
   
 	// atualiza os endereços
@@ -110,7 +109,16 @@ const updateUser = async(id, dataUser) => {
 	  });
 	}
   
-	return updatedUser;
+	// Retorna o usuário atualizado com os relacionamentos incluídos
+	const finalUpdatedUser = await prisma.usuarios.findUnique({
+		where: { id },
+		include: {
+		  enderecos: true,
+		  telefones: true,
+		},
+	});
+	
+	return finalUpdatedUser;
   };
   
 

@@ -1,4 +1,3 @@
-// userController.js
 import userService from '../services/userService.js'
 
 // chama o serviço allUsers para obter todos os usuários
