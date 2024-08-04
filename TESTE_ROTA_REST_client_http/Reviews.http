@@ -1,0 +1,48 @@
+{
+  "id": "1",
+  "data_criacao": "2024-08-04T12:34:56Z",
+  "data_conclusao": "2024-09-01T12:34:56Z",
+  "ativo": true,
+  "titulo": "Troca de Livros",
+  "titulo_livro_oferecido": "O Senhor dos Anéis",
+  "autor_livro_oferecido": "J.R.R. Tolkien",
+  "genero_livro_oferecido": "Fantasia",
+  "titulo_livro_solicitado": "Harry Potter e a Pedra Filosofal",
+  "autor_livro_solicitado": "J.K. Rowling",
+  "genero_livro_solicidado": "Fantasia",
+  "descricao": "Troca de livros entre fãs de fantasia. Ofereço 'O Senhor dos Anéis' e procuro 'Harry Potter e a Pedra Filosofal'.",
+  "anunciante_id": "b07a9e6d-c82d-4386-adfd-745c21986cb5"
+}
+
+{
+  "nota": 4,
+  "comentario": "Excelente anúncio! A troca foi rápida e eficiente.",
+  "data_avaliacao": "2024-08-04T14:30:00Z",
+  "qtd_like": 25,
+  "usuario_avaliador_id": "c59beb18-7c5d-43d0-aed2-ecd05db452ee",
+  "anuncio_id": "1"
+}
+
+
+{
+	"user": {
+		"id": "b07a9e6d-c82d-4386-adfd-745c21986cb5",
+		"nome": "Nina Maria",
+		"email": "nina@example.com",
+		"senha": "$2a$10$dcvo1vOl9iAdbafdut6lY.BSn7og4ShDEN4.fiy3g1SDeU6d11XVy",
+		"data_cadastro": "2024-08-02T22:07:45.807Z",
+		"endereco_id": "3ca3b236-de56-41a7-85d4-04a1bb4b8348"
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwN2E5ZTZkLWM4MmQtNDM4Ni1hZGZkLTc0NWMyMTk4NmNiNSIsImVtYWlsIjoibmluYUBleGFtcGxlLmNvbSIsImlhdCI6MTcyMjc4NjAzOCwiZXhwIjoxNzIyNzg5NjM4fQ.aDqoG7h3rWmDKNgfS96uMsj4hyc7x3LbXov6gFuA8ww"
+}
+
+
+http://localhost:8000/reviews/30dfa427-cd59-4517-80c5-bcc9759e9c2b
+{
+  "nota": 3,
+  "comentario": "A troca foi rápida e eficiente.Muito bom!",
+  "data_avaliacao": "2024-08-04T14:30:00Z",
+  "qtd_like": 15,
+  "usuario_avaliador_id": "c59beb18-7c5d-43d0-aed2-ecd05db452ee",
+  "anuncio_id": "1"
+}

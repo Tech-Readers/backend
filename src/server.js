@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import routerUsers from './routes/routerUsers.js'
 import routerExchanges from './routes/routerExchange.js';
+import routerReviews from './routes/routerReviews.js';
 
 // dotenv para carregar variáveis de ambiente de um arquivo
 dotenv.config();
@@ -32,6 +33,7 @@ app.use('/exchanges', routerExchanges);
 
 // app.use('/reviews', routerReview); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
+app.use('/reviews', routerReviews);
 
 // inicia o servidor para escutar na porta definida
 app.listen(PORT, () => {
