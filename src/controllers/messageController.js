@@ -2,7 +2,7 @@ import messageService from '../services/messageService.js';
 
 // Chama o serviço allMessages para obter todas as mensagens por anuncio
 
-const allMessages = async (req, res) => {
+const getMessagesByExchangeId = async (req, res) => {
   const { anuncio_id } = req.params;
   const userId = req.user.id;
 
@@ -43,7 +43,7 @@ const updateMessageRead = async (req, res) => {
 // Exporta todas as funções do controlador para serem usadas em outras partes da aplicação, como nas rotas
 
 const messageController = {
-  allMessages,
+  getMessagesByExchangeId,
   createMessage,
   updateMessageRead,
 };
