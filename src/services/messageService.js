@@ -1,4 +1,3 @@
-// service:
 import messageModel from '../models/messageModel.js';
 import Joi from 'joi';
 

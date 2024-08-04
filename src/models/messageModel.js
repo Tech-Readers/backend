@@ -1,4 +1,3 @@
-// model:
 import prisma from "../config/prismaClient.js";
 
 // Retorna todas as mensagens trocada por dois usuarios referentes a um anúncio específico de acordo com o ID do anúncio.
