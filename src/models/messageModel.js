@@ -20,10 +20,6 @@ const createMessage = async (dataMessage) => {
             usuario_destinatario_id: dataMessage.usuario_destinatario_id,
             usuario_remetente_id: dataMessage.usuario_remetente_id
         },
-        include: {
-            usuarios: true,
-            anuncios: true,
-        },
     });
 };
 

@@ -1,4 +1,4 @@
-// routerExchanges.js
+// routerExchange.js:
 import express from 'express';
 import exchangeController from '../controllers/exchangeController.js';
 
@@ -9,11 +9,11 @@ const routerExchanges = express.Router();
 // GET / --> Chama o método allExchanges do exchangeController para obter todos os anuncios
 routerExchanges.get('/', exchangeController.allExchanges); 
 
-// GET /:id --> Chama o método byIdExchange do exchangeController para obter um anuncio específico pelo ID
-routerExchanges.get('/:id', exchangeController.byIdExchange);
+// GET /:id --> Chama o método exchangeById do exchangeController para obter um anuncio específico pelo ID
+routerExchanges.get('/:id', exchangeController.exchangeById);
 
 // GET /:userId --> Chama o método exchangesByUserId para obter todos os anúncios de um usuário específico
-routerExchanges.get('/:userId',exchangeController.exchangesByUserId);
+routerExchanges.get('/user/:anunciante_id',exchangeController.exchangesByUserId);
 
 // POST / --> Cria um novo anuncio
 routerExchanges.post('/', exchangeController.createExchange);

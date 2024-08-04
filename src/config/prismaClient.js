@@ -1,3 +1,4 @@
+// prismaClient.js:
 import { PrismaClient } from "@prisma/client";
 
 // cria uma nova instância do PrismaClient e
@@ -5,3 +6,5 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default prisma;
+
+

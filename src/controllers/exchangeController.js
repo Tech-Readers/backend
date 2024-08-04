@@ -1,4 +1,4 @@
-// exchangeController.js
+// exchangeController.js:
 import exchangeService from '../services/exchangeService.js';
 
 // Chama o serviço allExchanges para obter todos os anúncios
@@ -13,13 +13,13 @@ const allExchanges = async (req, res) => {
   }
 };
 
-// Chama o serviço byIdExchange para obter um anúncio pelo ID
+// Chama o serviço exchangeById para obter um anúncio pelo ID
 // Se o anúncio não for encontrado, retorna status 404 (Not Found)
 // Retorna o anúncio com status 200 (OK) em caso de sucesso
 // Retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha
-const byIdExchange = async (req, res) => {
+const exchangeById = async (req, res) => {
   try {
-    const exchange = await exchangeService.byIdExchange(req.params.id);
+    const exchange = await exchangeService.exchangeById(req.params.id);
     if (!exchange) {
       return res.status(404).json({ error: 'Anúncio não encontrado' });
     }
@@ -34,7 +34,7 @@ const byIdExchange = async (req, res) => {
 // Retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha
 const exchangesByUserId = async (req, res) => {
   try {
-    const exchanges = await exchangeService.exchangesByUserId(req.params.id_user);
+    const exchanges = await exchangeService.exchangesByUserId(req.params.anunciante_id);
     res.status(200).json(exchanges);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -92,7 +92,7 @@ const closeExchange = async (req, res) => {
 // Exporta todas as funções do controlador para serem usadas em outras partes da aplicação, como nas rotas
 const exchangeController = {
   allExchanges,
-  byIdExchange,
+  exchangeById,
   exchangesByUserId,
   createExchange,
   updateExchange,
