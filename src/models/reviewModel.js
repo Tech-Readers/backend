@@ -11,8 +11,6 @@ const createReview = async(dataReview) => {
 		data: {
 			nota: dataReview.nota,
 			comentario: dataReview.comentario,
-			data_avaliacao: dataReview.data_avaliacao,
-			qtd_like: dataReview.qtd_like,
 			usuario_avaliador_id: dataReview.usuario_avaliador_id,
 			anuncio_id: dataReview.anuncio_id,
 		},

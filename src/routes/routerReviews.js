@@ -1,19 +1,19 @@
 // routerReview.js
 import express from 'express';
-import ReviewController from '../controllers/ReviewController.js';
+import reviewController from '../controllers/reviewController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
 
 const routerReviews = express.Router();
 
-routerReviews.post('/', authMiddleware, ReviewController.createReview);    
+routerReviews.post('/', authMiddleware, reviewController.createReview);    
 
-routerReviews.get('/:anuncio_id', authMiddleware, ReviewController.byIdExchange);
+routerReviews.get('/:anuncio_id', authMiddleware, reviewController.byIdExchange);
 
-routerReviews.put('/:id', authMiddleware, ReviewController.updateReview);
+routerReviews.put('/:id', authMiddleware, reviewController.updateReview);
 
-routerReviews.delete('/:id', authMiddleware, ReviewController.deleteReview);
+routerReviews.delete('/:id', authMiddleware, reviewController.deleteReview);
 
-routerReviews.patch('/:id', authMiddleware, ReviewController.updateLikes);
+routerReviews.patch('/:id', authMiddleware, reviewController.updateLikes);
 
 export default routerReviews;
 

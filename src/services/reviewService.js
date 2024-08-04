@@ -4,16 +4,15 @@ import Joi from 'joi';
 
 const reviewSchema = Joi.object({
   nota: Joi.number().required(),
-  comentario: Joi.string().required(),
-  data_avaliacao: Joi.date().required(),
-  qtd_like: Joi.number().required(),
+  comentario: Joi.string().optional(),
+  qtd_like: Joi.number().optional(),
   usuario_avaliador_id: Joi.string().required(),
   anuncio_id: Joi.number().required(),
 
 });
 
 const LikeSchema = Joi.object({
-  qtd_like: Joi.number().required(),
+  qtd_like: Joi.number().optional(),
 });
 
 const byIdExchange = async (anuncio_id) => {
