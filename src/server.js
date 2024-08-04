@@ -1,9 +1,9 @@
-// src/server.js:
+//server.js:
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import routerUsers from './routes/routerUsers.js'
-import routerExchange from './routes/routerExchange.js';
+import routerExchanges from './routes/routerExchange.js';
 import routerReviews from './routes/routerReviews.js';
 
 // dotenv para carregar variáveis de ambiente de um arquivo
@@ -27,8 +27,10 @@ app.use(express.json());
 // define que todas as rotas relacionadas aos usuários estarão no caminho /users e serão tratadas pelas rotas definidas em userRouters
 app.use('/users', routerUsers);
 
-app.use('/exchanges', routerExchange); // NÃO IMPLEMENTADO AS ROTAS DE ANUNCIOS
-// app.use('/messages', routerMessage); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
+app.use('/exchanges', routerExchanges); 
+
+// app.use('/messages', routerMessages); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
+
 // app.use('/reviews', routerReview); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
 app.use('/reviews', routerReviews);

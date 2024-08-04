@@ -1,4 +1,3 @@
-// userController.js
 import userService from '../services/userService.js'
 
 // chama o serviço allUsers para obter todos os usuários
@@ -7,7 +6,16 @@ import userService from '../services/userService.js'
 const allUsers = async (req, res) => {
 	try {
 		const users = await userService.allUsers();
-		res.status(200).json(users);
+
+		// remover a senha, endereço e telefones de cada usuário para ser exibido a lista de usuarios sem dados sensiveis
+		const usersPublic = users.map(user => {
+			const { senha, enderecos, endereco_id, telefones, ...userPublic } = user;
+			return userPublic;
+		});
+	  
+		res.status(200).json(usersPublic);
+
+		// res.status(200).json(users);
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
@@ -15,21 +23,25 @@ const allUsers = async (req, res) => {
 
 // Chama o serviço byIdUser para obter um usuário pelo ID
 // se o usuário não for encontrado, retorna status 404 (Not Found)
-// retorna uma versão pública do usuário (sem informações sensíveis) com status 200 (OK) em caso de sucesso
+// retorna status 200 (OK) em caso de sucesso
+// apenas o próprio usuário pode ver todos os seus dados, enquanto outros usuários só podem ver o id, nome e email
 // retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha.
 const byIdUser = async (req, res) => {
 	try {
 		const user = await userService.byIdUser(req.params.id);
-		if(!user) {
-			res.status(404).json({error: 'Usuário não encontrado'})
+	
+		if (!user) {
+		  return res.status(404).json({ error: 'Usuário não encontrado' });
 		}
-		const publicUser = {
-			id: user.id,
-			nome: user.nome,
-			email: user.email
-		};
-
-		res.status(200).json(publicUser);
+	
+		if (req.user.id === user.id) {
+		  // Se o usuário autenticado está solicitando seus próprios dados, retorna todos os dados
+		  res.status(200).json(user);
+		} else {
+		  // Caso contrário, retorna apenas o id, nome e email
+		  const { id, nome, email } = user;
+		  res.status(200).json({ id, nome, email });
+		}
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
@@ -79,27 +91,12 @@ const login = async (req, res) => {
 	try {
 		const {email, senha} = req.body;
 		const {user, token} = await userService.login(email, senha);
-		res.status(200).json({user, token});
+		res.status(200).json({id: user.id, nome: user.nome, token});
 	} catch (error) {
 		res.status(500).json({error: error.message});
 	};
 };
 
-// chama o serviço byIdUser para obter o perfil do usuário autenticado (usando req.user.id)
-// retorna o perfil do usuário com status 200 (OK) em caso de sucesso
-// retorna status 404 (Not Found) se o usuário não for encontrado
-// retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha
-const userProfile = async (req, res) => {
-	try {
-		const user = await userService.byIdUser(req.user.id);
-		if (!user) {
-		  return res.status(404).json({ error: 'Usuário não encontrado' });
-		}
-		res.status(200).json(user);
-	  } catch (error) {
-		res.status(500).json({ error: error.message });
-	  }
-};
 
 
 // exporta todas as funções do controlador para serem usadas em outras partes da aplicação, como nas rotas
@@ -110,7 +107,6 @@ const userController = {
  	updateUser,
   	deleteUser,
 	login,
-	userProfile,
 }
 
 export default userController;

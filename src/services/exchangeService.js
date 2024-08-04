@@ -1,23 +1,20 @@
-import { join } from '@prisma/client/runtime/library';
+// exchangeService:
 import exchangeModel from '../models/exchangeModel.js';
 import Joi from 'joi';
 
 // Esquema de validação com Joi: valida os dados do anúncio
 const exchangeSchema = Joi.object({
-  id: Joi.string().required(),
-  data_criacao: Joi.string().required(),
-  data_conclusao: Joi.string().required(),
-  ativo: Joi.boolean().required(),
   titulo: Joi.string().required(),
   titulo_livro_oferecido: Joi.string().required(),
   autor_livro_oferecido: Joi.string().required(),
   genero_livro_oferecido: Joi.string().required(),
   titulo_livro_solicitado: Joi.string().required(),
   autor_livro_solicitado: Joi.string().required(),
-  genero_livro_solicidado: Joi.string().required(),
-  descricao: Joi.string().required(),
+  genero_livro_solicitado: Joi.string().required(),
+  descricao: Joi.string().optional(),
   anunciante_id: Joi.string().required()
 });
+
 
 // Retorna todos os anúncios do banco de dados
 const allExchanges = async () => {
@@ -25,20 +22,20 @@ const allExchanges = async () => {
 };
 
 // Busca um anúncio pelo ID, validando a entrada e verificando se o anúncio existe
-const byIdExchange = async (id) => {
+const exchangeById = async (id) => {
   if (!id) throw new Error('ID é obrigatório.');
 
-  const exchange = await exchangeModel.byIdExchange(id);
+  const exchange = await exchangeModel.exchangeById(id);
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
   return exchange;
 };
 
 // Retorna todos os anúncios de um usuário específico
-const exchangesByUserId = async (userId) => {
-  if (!userId) throw new Error('ID do usuário é obrigatório.');
+const exchangesByUserId = async (anunciante_id) => {
+  if (!anunciante_id) throw new Error('ID do usuário é obrigatório.');
 
-  return await exchangeModel.exchangesByUserId(userId);
+  return await exchangeModel.exchangesByUserId(anunciante_id);
 };
 
 // Valida os dados do anúncio e cria um novo anúncio no banco de dados
@@ -62,7 +59,7 @@ const updateExchange = async (id, dataExchange) => {
   }
 
   // Verifica se o anúncio existe
-  const exchange = await exchangeModel.findById(id); // Ajuste a função conforme seu modelo
+  const exchange = await exchangeModel.exchangeById(id); // Ajuste a função conforme seu modelo
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
   // Atualiza o anúncio
@@ -74,7 +71,7 @@ const updateExchange = async (id, dataExchange) => {
 const deleteExchange = async (id) => {
   if (!id) throw new Error('ID é obrigatório.');
 
-  const exchange = await exchangeModel.byIdExchange(id);
+  const exchange = await exchangeModel.exchangeById(id);
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
   return await exchangeModel.deleteExchange(id);
@@ -84,7 +81,7 @@ const deleteExchange = async (id) => {
 const closeExchange = async (id) => {
   if (!id) throw new Error('ID é obrigatório.');
 
-  const exchange = await exchangeModel.byIdExchange(id);
+  const exchange = await exchangeModel.exchangeById(id);
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
   return await exchangeModel.closeExchange(id);
@@ -93,7 +90,7 @@ const closeExchange = async (id) => {
 // Agrupa todas as funções em um objeto exchangeService e as exporta para serem usadas em outras partes da aplicação
 const exchangeService = {
   allExchanges,
-  byIdExchange,
+  exchangeById,
   exchangesByUserId,
   createExchange,
   updateExchange,
@@ -102,3 +99,6 @@ const exchangeService = {
 };
 
 export default exchangeService;
+
+
+

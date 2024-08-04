@@ -1,3 +1,4 @@
+// exchangeModel:
 import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios
@@ -13,18 +14,30 @@ const exchangeById = async (id) => {
 };
 
 // Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário
-const exchangesByUserId = async (userId) => {
+const exchangesByUserId = async (anunciante_id) => {
   return await prisma.anuncios.findMany({
-    where: { userId },
+    where: {anunciante_id},
   });
 };
 
 // Cria um novo anúncio
-const createExchange = async (data) => {
+const createExchange = async (dataExchange) => {
   return await prisma.anuncios.create({
-    data,
+    data: {
+      titulo: dataExchange.titulo,
+      titulo_livro_oferecido: dataExchange.titulo_livro_oferecido,
+      autor_livro_oferecido: dataExchange.autor_livro_oferecido,
+      genero_livro_oferecido: dataExchange.genero_livro_oferecido,
+      titulo_livro_solicitado: dataExchange.titulo_livro_solicitado,
+      autor_livro_solicitado: dataExchange.autor_livro_solicitado,
+      genero_livro_solicidado: dataExchange.genero_livro_solicidado,
+      descricao: dataExchange.descricao,
+      anunciante_id: dataExchange.anunciante_id
+    },
   });
 };
+
+
 
 // Fecha um anúncio (anúncio passa do estado ativo para inativo)
 const closeExchange = async (id) => {
@@ -42,8 +55,14 @@ const updateExchange = async (id, dataExchange) => {
   const updateExchange = await prisma.anuncios.update({
     where: { id },
     data: {
+      titulo: dataExchange.titulo,
+      titulo_livro_oferecido: dataExchange.titulo_livro_oferecido,
       autor_livro_oferecido: dataExchange.autor_livro_oferecido,
       genero_livro_oferecido: dataExchange.genero_livro_oferecido,
+      titulo_livro_solicitado: dataExchange.titulo_livro_solicitado,
+      autor_livro_solicitado: dataExchange.autor_livro_solicitado,
+      genero_livro_solicidado: dataExchange.genero_livro_solicidado,
+      descricao: dataExchange.descricao,
     },
   });
   return updateExchange;
@@ -67,3 +86,5 @@ const exchangeModel = {
 };
 
 export default exchangeModel;
+
+

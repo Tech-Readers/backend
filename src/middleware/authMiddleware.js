@@ -16,7 +16,10 @@ const authMiddleware = async (req, res, next) => {
 			where: {id: decoded.id},
 			select: {id: true, nome: true, email: true},
 		});
-		
+
+		if (!req.user) {
+            return res.status(404).json({ error: 'Usuário não encontrado.' });
+        }
 		
 		next();
 	} catch (error) {
