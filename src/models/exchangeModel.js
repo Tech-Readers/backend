@@ -55,8 +55,14 @@ const updateExchange = async (id, dataExchange) => {
   const updateExchange = await prisma.anuncios.update({
     where: { id },
     data: {
+      titulo: dataExchange.titulo,
+      titulo_livro_oferecido: dataExchange.titulo_livro_oferecido,
       autor_livro_oferecido: dataExchange.autor_livro_oferecido,
       genero_livro_oferecido: dataExchange.genero_livro_oferecido,
+      titulo_livro_solicitado: dataExchange.titulo_livro_solicitado,
+      autor_livro_solicitado: dataExchange.autor_livro_solicitado,
+      genero_livro_solicidado: dataExchange.genero_livro_solicidado,
+      descricao: dataExchange.descricao,
     },
   });
   return updateExchange;
