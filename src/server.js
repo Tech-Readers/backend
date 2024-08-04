@@ -3,7 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import routerUsers from './routes/routerUsers.js'
-import routerExchanges from './routes/routerExchange.js';
+import routerExchanges from './routes/routerExchanges.js';
+import routerMessages from './routes/routerMessages.js';
 
 // dotenv para carregar variáveis de ambiente de um arquivo
 dotenv.config();
@@ -28,7 +29,7 @@ app.use('/users', routerUsers);
 
 app.use('/exchanges', routerExchanges); 
 
-// app.use('/messages', routerMessages); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
+app.use('/messages', routerMessages); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
 
 // app.use('/reviews', routerReview); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
