@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import routerUsers from './routes/routerUsers.js'
 import routerExchanges from './routes/routerExchanges.js';
 import routerMessages from './routes/routerMessages.js';
+import routerReviews from './routes/routerReviews.js';
 
 // dotenv para carregar variáveis de ambiente de um arquivo
 dotenv.config();
@@ -31,7 +32,7 @@ app.use('/exchanges', routerExchanges);
 
 app.use('/messages', routerMessages); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
 
-// app.use('/reviews', routerReview); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
+app.use('/reviews', routerReviews); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
 
 
 // inicia o servidor para escutar na porta definida
