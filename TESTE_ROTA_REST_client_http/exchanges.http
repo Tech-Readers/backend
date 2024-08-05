@@ -3,17 +3,17 @@
 ### POST exchanges
 POST http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
 
 {
-    "titulo": "criando titulo de anuncio",
-    "titulo_livro_oferecido": "livro oferecido",
-    "autor_livro_oferecido": "autor do livro oferecido",
-    "genero_livro_oferecido": "genero do livro oferecido",
-    "titulo_livro_solicitado": "titulo do livro que quero",
-    "autor_livro_solicitado": "autor do livro que quero",
-    "genero_livro_solicitado": "gereno do livro que quero",
-    "descricao": "tanto faz",
+    "titulo": "criando titulo de anuncio 2",
+    "titulo_livro_oferecido": "livro oferecido 2",
+    "autor_livro_oferecido": "autor do livro oferecido 2",
+    "genero_livro_oferecido": "genero do livro oferecido 2",
+    "titulo_livro_solicitado": "titulo do livro que quero 2",
+    "autor_livro_solicitado": "autor do livro que quero 2",
+    "genero_livro_solicitado": "gereno do livro que quero 2",
+    "descricao": "tanto faz 2",
     "anunciante_id": "01b9370a-2aa7-4194-8e7a-a8a374b19288"
 }
 
@@ -36,7 +36,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
 ### GET exchanges/user/:anunciante_id
 GET http://localhost:8000/exchanges/user/01b9370a-2aa7-4194-8e7a-a8a374b19288
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
 
 ###
 
