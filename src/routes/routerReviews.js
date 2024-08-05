@@ -4,11 +4,11 @@ import authMiddleware from '../middleware/authMiddleware.js';
 
 const routerReviews = express.Router();
 
-routerReviews.post('/', authMiddleware, reviewController.createReview);    
+routerReviews.post('/', authMiddleware, reviewController.createReview);    // ok
 
-routerReviews.get('/:anuncio_id', authMiddleware, reviewController.byIdExchange);
+routerReviews.get('/:anuncio_id', authMiddleware, reviewController.byIdExchange); // ok
 
-routerReviews.put('/:id', authMiddleware, reviewController.updateReview);
+routerReviews.put('/:id', authMiddleware, reviewController.updateReview); //ok
 
 routerReviews.delete('/:id', authMiddleware, reviewController.deleteReview);
 

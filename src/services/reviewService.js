@@ -7,7 +7,7 @@ const reviewSchema = Joi.object({
   comentario: Joi.string().optional(),
   qtd_like: Joi.number().optional(),
   usuario_avaliador_id: Joi.string().required(),
-  anuncio_id: Joi.number().required(),
+  anuncio_id: Joi.string().required(),
 
 });
 

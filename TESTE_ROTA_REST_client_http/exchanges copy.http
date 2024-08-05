@@ -1,0 +1,55 @@
+### AVALIAÇOES
+
+### POST reviews
+POST http://localhost:8000/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+
+{
+    "nota": 5,
+    "comentario": "execelente troca",
+    "usuario_avaliador_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866",
+    "anuncio_id": "438d3c1a-a236-45ae-98ec-9e4f967fdd65"
+}
+
+### 
+
+### GET reviews/:anuncio_id
+GET http://localhost:8000/reviews/438d3c1a-a236-45ae-98ec-9e4f967fdd65
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+
+###
+
+### PUT reviews/:id
+PUT http://localhost:8000/reviews/ffc3b899-c3d3-444a-9b41-80fc97060077
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+
+{
+    "nota": 4,
+    "comentario": "atualizada execelente troca",
+    "usuario_avaliador_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866",
+    "anuncio_id": "438d3c1a-a236-45ae-98ec-9e4f967fdd65"
+}
+
+###
+
+### PATCH reviews/:id
+PATCH  http://localhost:8000/reviews/ffc3b899-c3d3-444a-9b41-80fc97060077
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+
+{
+    "qtd_like": 1
+}
+
+
+###
+
+
+### DELETE reviews/:id
+DELETE http://localhost:8000/reviews/ffc3b899-c3d3-444a-9b41-80fc97060077
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+
