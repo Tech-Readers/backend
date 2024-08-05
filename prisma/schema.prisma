@@ -1,3 +1,5 @@
+//schema.prisma:
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -18,7 +20,7 @@ model anuncios {
   genero_livro_oferecido  String       @db.VarChar(100)
   titulo_livro_solicitado String       @db.VarChar(255)
   autor_livro_solicitado  String       @db.VarChar(255)
-  genero_livro_solicidado String       @db.VarChar(100)
+  genero_livro_solicitado String       @db.VarChar(100)
   descricao               String?
   anunciante_id           String       @db.Uuid
   usuarios                usuarios     @relation(fields: [anunciante_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
@@ -89,3 +91,6 @@ model usuarios {
   telefones                                             telefones[]
   enderecos                                             enderecos    @relation(fields: [endereco_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
+
+
+
