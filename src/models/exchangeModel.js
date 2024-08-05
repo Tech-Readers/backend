@@ -61,7 +61,7 @@ const updateExchange = async (id, dataExchange) => {
       genero_livro_oferecido: dataExchange.genero_livro_oferecido,
       titulo_livro_solicitado: dataExchange.titulo_livro_solicitado,
       autor_livro_solicitado: dataExchange.autor_livro_solicitado,
-      genero_livro_solicidado: dataExchange.genero_livro_solicidado,
+      genero_livro_solicitado: dataExchange.genero_livro_solicitado,
       descricao: dataExchange.descricao,
     },
   });
