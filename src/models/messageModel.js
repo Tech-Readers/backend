@@ -4,10 +4,6 @@ import prisma from "../config/prismaClient.js";
 const getMessagesByExchangeId = async (anuncio_id) => {
     return await prisma.mensagens.findMany({
         where: { anuncio_id },
-        include: {
-            enderecos: true,
-            telefones: true,
-        },
     });
 };
 

@@ -8,20 +8,20 @@ import authMiddleware from '../middleware/authMiddleware.js';
 const routerExchanges = express.Router();
 
 // GET / --> Chama o método allExchanges do exchangeController para obter todos os anuncios
-routerExchanges.get('/', authMiddleware, exchangeController.allExchanges); 
+routerExchanges.get('/', authMiddleware, exchangeController.allExchanges); // ok
 
 // GET /:id --> Chama o método exchangeById do exchangeController para obter um anuncio específico pelo ID
-routerExchanges.get('/:id', authMiddleware, exchangeController.exchangeById);
+routerExchanges.get('/:id', authMiddleware, exchangeController.exchangeById); // ok
 
 // GET /:userId --> Chama o método exchangesByUserId para obter todos os anúncios de um usuário específico
-routerExchanges.get('/user/:anunciante_id', authMiddleware, exchangeController.exchangesByUserId);
+routerExchanges.get('/user/:anunciante_id', authMiddleware, exchangeController.exchangesByUserId); // ok
 
 // POST / --> Cria um novo anuncio
-routerExchanges.post('/', authMiddleware, exchangeController.createExchange);
+routerExchanges.post('/', authMiddleware, exchangeController.createExchange); // ok
 
 
 // PUT /:id --> Atualiza os dados de um anúncio específico de acordo com o ID do anúncio
-routerExchanges.put('/:id', authMiddleware, exchangeController.updateExchange);
+routerExchanges.put('/:id', authMiddleware, exchangeController.updateExchange); // ok
 
 
 // DELETE /:id --> Deleta os dados de um anúncio específico de acordo com o ID do anúncio;

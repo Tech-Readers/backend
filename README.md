@@ -112,14 +112,14 @@ src/
 
 
 3. **Mensagens:** :warning:
-  -	GET /exchanges/{id_exchange}/messages: Retorna todas as mensagens referentes a um anúncio específico de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
+  -	GET messages/exchanges/{id_anuncio}: Retorna todas as mensagens referentes a um anúncio específico  de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
   -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
   -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
 
 
 4. **Avaliacoes:** :warning:
   -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
-  -	GET /exchanges/{id_exchange}/reviews: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
+  -	GET /exchanges/{id_anuncio}/reviews: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
   -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
   -	PUT /reviews/{id}: Altera os dados de uma avaliação específica de acordo com ID da avaliação;
   -	DELETE /reviews/{id}: Deleta os dados de uma avaliação específica de acordo com ID da avaliação.

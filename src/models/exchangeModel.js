@@ -1,4 +1,3 @@
-// exchangeModel:
 import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios

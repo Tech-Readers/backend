@@ -1,4 +1,3 @@
-// exchangeService:
 import exchangeModel from '../models/exchangeModel.js';
 import Joi from 'joi';
 
@@ -35,7 +34,10 @@ const exchangeById = async (id) => {
 const exchangesByUserId = async (anunciante_id) => {
   if (!anunciante_id) throw new Error('ID do usuário é obrigatório.');
 
-  return await exchangeModel.exchangesByUserId(anunciante_id);
+  const exchanges = await exchangeModel.exchangesByUserId(anunciante_id); 
+  if (!exchanges) throw new Error('Anúncios não encontrados.')
+
+  return exchanges;
 };
 
 // Valida os dados do anúncio e cria um novo anúncio no banco de dados

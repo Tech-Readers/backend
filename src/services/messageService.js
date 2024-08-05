@@ -2,9 +2,9 @@ import messageModel from '../models/messageModel.js';
 import Joi from 'joi';
 
 const messageSchema = Joi.object({
-    anuncio_id: Joi.number().required(),
-    usuario_remetente_id: Joi.number().required(),
-    usuario_destinatario_id: Joi.number().required(),
+    anuncio_id: Joi.string().required(),
+    usuario_remetente_id: Joi.string().required(),
+    usuario_destinatario_id: Joi.string().required(),
     texto: Joi.string().required(),
 });
 

@@ -29,6 +29,7 @@ const createMessage = async (req, res) => {
   }
 };
 
+
 // Chama o serviço updateMessage para atualizar as mensagens como lidas quando forem visualizadas
 
 const updateMessageRead = async (req, res) => {
@@ -49,3 +50,6 @@ const messageController = {
 };
 
 export default messageController;
+
+
+

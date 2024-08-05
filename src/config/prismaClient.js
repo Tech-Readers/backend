@@ -1,4 +1,3 @@
-// prismaClient.js:
 import { PrismaClient } from "@prisma/client";
 
 // cria uma nova instância do PrismaClient e
