@@ -14,8 +14,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
 
 ### 
 
-### GET reviews/:anuncio_id
-GET http://localhost:8000/reviews/438d3c1a-a236-45ae-98ec-9e4f967fdd65
+### GET reviews/:anuncio_id/exchanges
+GET http://localhost:8000/reviews/438d3c1a-a236-45ae-98ec-9e4f967fdd65/exchanges
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
 

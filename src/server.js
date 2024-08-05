@@ -1,4 +1,3 @@
-//server.js:
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -30,9 +29,9 @@ app.use('/users', routerUsers);
 
 app.use('/exchanges', routerExchanges); 
 
-app.use('/messages', routerMessages); // NÃO IMPLEMENTADO AS ROTAS DE MENSAGENS
+app.use('/messages', routerMessages);
 
-app.use('/reviews', routerReviews); // NÃO IMPLEMENTADO AS ROTAS DE AVALIAÇÕES
+app.use('/reviews', routerReviews); 
 
 
 // inicia o servidor para escutar na porta definida

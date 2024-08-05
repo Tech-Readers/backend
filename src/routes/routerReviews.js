@@ -6,7 +6,7 @@ const routerReviews = express.Router();
 
 routerReviews.post('/', authMiddleware, reviewController.createReview);    // ok
 
-routerReviews.get('/:anuncio_id', authMiddleware, reviewController.byIdExchange); // ok
+routerReviews.get('/:anuncio_id/exchanges', authMiddleware, reviewController.byIdExchange); // ok
 
 routerReviews.put('/:id', authMiddleware, reviewController.updateReview); //ok
 
