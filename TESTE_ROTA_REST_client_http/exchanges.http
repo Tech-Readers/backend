@@ -3,7 +3,7 @@
 ### POST exchanges
 POST http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
 
 {
     "titulo": "criando titulo de anuncio 2",
@@ -14,7 +14,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
     "autor_livro_solicitado": "autor do livro que quero 2",
     "genero_livro_solicitado": "gereno do livro que quero 2",
     "descricao": "tanto faz 2",
-    "anunciante_id": "01b9370a-2aa7-4194-8e7a-a8a374b19288"
+    "anunciante_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866"
 }
 
 ###
@@ -23,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
 ### GET exchanges
 GET http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
 ###
 
 ### GET exchanges/:id
@@ -41,20 +41,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
 ###
 
 ### PUT exchanges/:id
-PUT http://localhost:8000/exchanges/438d3c1a-a236-45ae-98ec-9e4f967fdd65
+PUT http://localhost:8000/exchanges/a2edd880-73ff-443f-aa0d-5cc49c865f95
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
 
 {
-    "titulo": "atualizado criando titulo de anuncio",
-    "titulo_livro_oferecido": "atualizado livro oferecido",
-    "autor_livro_oferecido": "atualizado autor do livro oferecido",
-    "genero_livro_oferecido": "genero do livro oferecido",
-    "titulo_livro_solicitado": "titulo do livro que quero",
-    "autor_livro_solicitado": "autor do livro que quero",
-    "genero_livro_solicitado": "gereno do livro que quero",
-    "descricao": "tanto faz",
-    "anunciante_id": "01b9370a-2aa7-4194-8e7a-a8a374b19288"
+    "titulo": "joão criando titulo de anuncio 2",
+    "titulo_livro_oferecido": "joão livro oferecido 2",
+    "autor_livro_oferecido": "autor do livro oferecido 2",
+    "genero_livro_oferecido": "genero do livro oferecido 2",
+    "titulo_livro_solicitado": "titulo do livro que quero 2",
+    "autor_livro_solicitado": "autor do livro que quero 2",
+    "genero_livro_solicitado": "gereno do livro que quero 2",
+    "descricao": "tanto faz 2",
+    "anunciante_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866"
 }
 
 ###

@@ -2,7 +2,7 @@
 
 ### allUsers
 GET http://localhost:8000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
 
 
 
@@ -113,8 +113,8 @@ POST http://localhost:8000/users/login
 Content-Type: application/json
 
 {
-    "email": "maria@example.com",
-    "senha": "senha1234"
+    "email": "joao@example.com",
+    "senha": "senha123"
 }
 
 ###

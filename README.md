@@ -9,7 +9,7 @@
   <img src="http://img.shields.io/static/v1?label=Insomnia&message=9.3.2&color=4000bf&style=for-the-badge&logo=insomnia"/>
   <img src="http://img.shields.io/static/v1?label=Git&message=2.45.2&color=f05032&style=for-the-badge&logo=git"/>
   <img src="http://img.shields.io/static/v1?label=GitHub&message=2024&color=181717&style=for-the-badge&logo=github"/>
-  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
 </p>
 
@@ -100,7 +100,7 @@ src/
   - POST /users/login: Autentica um usuário e retorna o token JWT.
 
 
-1. **Anuncios:** :warning:
+1. **Anuncios:** :heavy_check_mark:
   -	GET /exchanges: Retorna todos os anúncios;
   -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
   -	GET /users/{id_user}/exchanges: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
@@ -111,13 +111,13 @@ src/
 
 
 
-3. **Mensagens:** :warning:
+3. **Mensagens:** :heavy_check_mark:
   -	GET messages/exchanges/{id_anuncio}: Retorna todas as mensagens referentes a um anúncio específico  de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
   -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
   -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
 
 
-4. **Avaliacoes:** :warning:
+4. **Avaliacoes:** :heavy_check_mark:
   -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
   -	GET /reviews/{id_anuncio}/exchanges: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
   -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
