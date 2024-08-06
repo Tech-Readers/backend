@@ -17,9 +17,9 @@
 
 ### Tópicos 
 
-:small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :warning:
+:small_blue_diamond: [Arquitetura do Backend](#arquitetura-do-backend-triangular_ruler-straight_ruler) :heavy_check_mark:
 
-:small_blue_diamond: [Rotas - EndPoints](#Rotas---EndPoints-arrows_clockwise) :warning:
+:small_blue_diamond: [Rotas - EndPoints](#Rotas---EndPoints-arrows_clockwise) :heavy_check_mark:
 
 :small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
 
@@ -76,7 +76,7 @@ src/
 ```
 
 
-**Descrição:** :warning:
+**Descrição:** :heavy_check_mark:
 
 1. **Models:** Responsáveis por definir a estrutura dos dados e interagir com o banco de dados. Por exemplo,  o Prisma ORM para a interação com o banco de dados
 2. **Controllers:** Controlam a lógica de entrada e saída. Recebem as requisições, chamam os serviços necessários e retornam as respostas apropriadas.
