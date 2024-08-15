@@ -134,13 +134,15 @@ $ npx prisma migrate dev --name init
 
 ```
 
-## Executar app :arrow_forward:
-
+**development:**
 ```bash
-# development
 $ npm run dev
 ```
-... 
+
+```bash
+Running on (http://localhost:8000/)
+```
+...  
 
 ## Licença 
 
