@@ -140,7 +140,7 @@ $ npm run dev
 ```
 
 ```bash
-Running on (http://localhost:8000/)
+Running on http://localhost:8000/
 ```
 ...  
 
