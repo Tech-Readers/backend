@@ -30,49 +30,58 @@
 ## Arquitetura do Backend :triangular_ruler: :straight_ruler:
 
 ```plaintext
-prisma/
-│
-├── migrations
-|
-└── schema.prisma
-
-src/
-│
-├── controllers/
-│ └── userController.js
-│ └── exchangeController.js
-│ └── messageController.js
-│ └── reviewController.js
-│
-├── services/
-│ └── userService.js
-│ └── exchangeService.js
-│ └── messageService.js
-│ └── reviewService.js
-│
-├── models/
-│ └── userModel.js
-│ └── exchangeModel.js
-│ └── messageModel.js
-│ └── reviewModel.js
-│
-├── middleware/
-│ └── authMiddleware.js
-│ └── errorMiddleware.js
-│
-├── routes/
-│ └── routerUser.js
-│ └── routerExchange.js
-│ └── routerMessage.js
-│ └── routerReview.js
-│
-├── utils/
-│ └── jwt.js
-│
-├── config/
-│ └── prismaClient.js
-│
-└── server.js
+  Conectando Leitores
+  |
+  |
+  |  prisma/
+  |  │
+  |  ├── migrations
+  |  |
+  |  └── schema.prisma
+  |
+  |  src/
+  |  │
+  |  ├── controllers/
+  |  │ └── userController.js
+  |  │ └── exchangeController.js
+  |  │ └── messageController.js
+  |  │ └── reviewController.js
+  |  │
+  |  ├── services/
+  |  │ └── userService.js
+  |  │ └── exchangeService.js
+  |  │ └── messageService.js
+  |  │ └── reviewService.js
+  |  │
+  |  ├── models/
+  |  │ └── userModel.js
+  |  │ └── exchangeModel.js
+  |  │ └── messageModel.js
+  |  │ └── reviewModel.js
+  |  │
+  |  ├── middleware/
+  |  │ └── authMiddleware.js
+  |  │ └── uploadMulter.js
+  |  │
+  |  ├── routes/
+  |  │ └── routerUser.js
+  |  │ └── routerExchange.js
+  |  │ └── routerMessage.js
+  |  │ └── routerReview.js
+  |  │
+  |  ├── utils/
+  |  │ └── jwt.js
+  |  │ └── uploadFirebase.js
+  |  │
+  |  ├── config/
+  |  │ └── prismaClient.js
+  |  | └── firebase.js
+  |  │
+  |  └── server.js
+  |
+  ├── .env
+  | 
+  └── serviceAccount.json
 ```
 
 
