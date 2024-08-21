@@ -1,3 +1,4 @@
+//routerExchanges.js:
 import express from 'express';
 import exchangeController from '../controllers/exchangeController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
@@ -16,11 +17,11 @@ routerExchanges.get('/:id', authMiddleware, exchangeController.exchangeById); //
 routerExchanges.get('/user/:anunciante_id', authMiddleware, exchangeController.exchangesByUserId); // ok
 
 // POST / --> Cria um novo anuncio
-routerExchanges.post('/', upload.single('image'), authMiddleware, exchangeController.createExchange); // ok
+routerExchanges.post('/', upload.single('image'), authMiddleware, exchangeController.createExchange); 
 
 
 // PUT /:id --> Atualiza os dados de um anúncio específico de acordo com o ID do anúncio
-routerExchanges.put('/:id', upload.single('image'), authMiddleware, exchangeController.updateExchange); // ok
+routerExchanges.put('/:id', upload.single('image'), authMiddleware, exchangeController.updateExchange);
 
 
 // DELETE /:id --> Deleta os dados de um anúncio específico de acordo com o ID do anúncio;

@@ -1,3 +1,4 @@
+// uploadFirebase.js:
 import bucket from '../config/firebase.js';
 import path from 'path'
 
@@ -18,3 +19,6 @@ const uploadImageFirebase = async (file) => {
 }
 
 export default uploadImageFirebase;
+
+
+

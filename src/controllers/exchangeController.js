@@ -1,3 +1,4 @@
+////exchangeController.js:
 import exchangeService from '../services/exchangeService.js';
 
 // Chama o serviço allExchanges para obter todos os anúncios

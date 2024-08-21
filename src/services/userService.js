@@ -1,3 +1,4 @@
+// userService.js:
 import userModel from '../models/userModel.js';
 import Joi from 'joi';
 import bcrypt from 'bcryptjs';
@@ -27,6 +28,7 @@ const userSchema = Joi.object({
   senha: Joi.string().min(6).max(10).required(),
   enderecos: addressSchema,
   telefones: Joi.array().items(phoneSchema).min(1),
+  image: Joi.string().allow(null, '')
 });
 
 // busca um usuário pelo ID, validando a entrada e verificando se o usuário existe
@@ -63,7 +65,7 @@ const createUser = async (dataUser, file) => {
   if (file) {
     dataUser.image = await uploadImageFirebase(file)
   } else{
-    dataUser.image = '';
+    dataUser.image = null; 
   };
 
   const hashedPassword = await bcrypt.hash(dataUser.senha, 10);
@@ -93,7 +95,7 @@ const updateUser = async (id, dataUser, file) => {
   if (file) {
     dataUser.image = await uploadImageFirebase(file);
   }else{
-    dataUser.image = undefined;
+    dataUser.image = dataUser.image || undefined;
   };
 
   if (dataUser.senha) {

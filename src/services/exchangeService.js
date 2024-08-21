@@ -1,3 +1,4 @@
+//exchangeService.js:
 import exchangeModel from '../models/exchangeModel.js';
 import Joi from 'joi';
 import uploadImageFirebase from '../utils/uploadFirebase.js';
@@ -11,8 +12,9 @@ const exchangeSchema = Joi.object({
   titulo_livro_solicitado: Joi.string().required(),
   autor_livro_solicitado: Joi.string().required(),
   genero_livro_solicitado: Joi.string().required(),
-  descricao: Joi.string().optional(),
-  anunciante_id: Joi.string().required()
+  descricao: Joi.string().allow(null, ''),
+  anunciante_id: Joi.string().required(),
+  image: Joi.string().allow(null, ''),
 });
 
 
@@ -41,24 +43,26 @@ const exchangesByUserId = async (anunciante_id) => {
   return exchanges;
 };
 
-// Valida os dados do anúncio e cria um novo anúncio no banco de dados
+// Valida os dados do anúncio e cria um novo anúncio no banco de dados 
 const createExchange = async (dataExchange, file) => {
-  const { error } = exchangeSchema.validate(dataExchange);
-  if (error) {
-    throw new Error(error.details.map((detail) => detail.message).join(' '));
-  }
+    const { error } = exchangeSchema.validate(dataExchange);
+    if (error) {
+      throw new Error(error.details.map((detail) => detail.message).join(' '));
+    }
 
-   // Upload da imagem
-   if (file) {
-    dataUser.image = await uploadImageFirebase(file)
+    // Upload da imagem
+  if (file) {
+    dataExchange.image = await uploadImageFirebase(file);
   } else{
-    dataUser.image = '';
+    dataExchange.image = null;
+  };
+  
+    return await exchangeModel.createExchange(dataExchange);
   };
 
-  return await exchangeModel.createExchange(dataExchange);
-};
 
 // Valida os dados do anúncio, verifica se o anúncio existe e atualiza os dados no banco de dados
+// const updateExchange = async (id, dataExchange, file)
 const updateExchange = async (id, dataExchange, file) => {
   if (!id) throw new Error('ID é obrigatório.');
 
@@ -73,9 +77,9 @@ const updateExchange = async (id, dataExchange, file) => {
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
   if (file) {
-    dataUser.image = await uploadImageFirebase(file);
+    dataExchange.image = await uploadImageFirebase(file);
   }else{
-    dataUser.image = undefined;
+    dataExchange.image = dataExchange.image || undefined;
   };
 
   // Atualiza o anúncio

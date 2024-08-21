@@ -1,3 +1,4 @@
+// userModel.js:
 import prisma from '../config/prismaClient.js';
 
 // busca um usuario no banco de dados com base no email

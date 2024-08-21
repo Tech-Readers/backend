@@ -1,3 +1,4 @@
+// firebase.js:
 import admin from 'firebase-admin';
 import serviceAccount from '../../serviceAccount.json' assert { type: 'json' };
 import dotenv from 'dotenv';

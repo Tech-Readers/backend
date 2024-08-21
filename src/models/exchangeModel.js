@@ -1,3 +1,4 @@
+//exchangeModel.js:
 import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios
@@ -32,7 +33,7 @@ const createExchange = async (dataExchange) => {
       genero_livro_solicitado: dataExchange.genero_livro_solicitado,
       descricao: dataExchange.descricao,
       anunciante_id: dataExchange.anunciante_id,
-      image: dataExchange.image,
+      image: dataExchange.image
     },
   });
 };
