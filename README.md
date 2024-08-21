@@ -103,7 +103,7 @@ src/
 1. **Anuncios:** :heavy_check_mark:
   -	GET /exchanges: Retorna todos os anúncios;
   -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
-  -	GET /users/{id_user}/exchanges: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
+  -	GET /exchanges/users/{id_user}: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
   -	POST /exchanges: Cria um novo anúncio;
   -	PATH /exchanges/{id}/close: Fecha um anúncio (anúncio passa do estado ativo para inativo, altera "ativo: TRUE" para "ativo: FALSE" e insere o valor da “data_conclusao”);
   -	PUT /exchanges/{id}: Atualiza os dados de um anúncio específico de acordo com o ID do anúncio;
