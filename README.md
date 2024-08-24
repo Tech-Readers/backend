@@ -146,6 +146,8 @@ $ npx prisma migrate dev --name init
 
 ```
 
+## Executar app :arrow_forward:
+
 **development:**
 ```bash
 $ npm run dev
