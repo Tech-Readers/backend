@@ -14,7 +14,7 @@ const app = express();
 
 // carrega a variável de ambiente do arquivo .env para process.env
 // define a porta em que o servidor vai escutar. Se a variável de ambiente PORT não estiver definida, usa a porta 8000 por padrão
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 
 // módulo CORS para permitir ou restringir requisições de diferentes domínios
 
