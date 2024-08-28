@@ -6,7 +6,7 @@ import routerExchanges from './routes/routerExchanges.js';
 import routerMessages from './routes/routerMessages.js';
 import routerReviews from './routes/routerReviews.js';
 
-// dotenv para carregar variáveis de ambiente de um arquivo
+// dotenv para carregar variáveis de ambiente de um arquiv
 dotenv.config();
 
 // cria uma instância express
