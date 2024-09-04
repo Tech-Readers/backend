@@ -7,14 +7,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhL
 
 {
     "texto": "gostaria de realizar uma troca",
-    "anuncio_id": "438d3c1a-a236-45ae-98ec-9e4f967fdd65",
     "usuario_destinatario_id": "01b9370a-2aa7-4194-8e7a-a8a374b19288",
     "usuario_remetente_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866"
 }
 
 
 
-### GET /messages/exchanges/:anuncio_id
+### GET /messages/:id
 GET http://localhost:8000/messages/exchanges/438d3c1a-a236-45ae-98ec-9e4f967fdd65
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjI4MzcsImV4cCI6MTcyMjgyNjQzN30.R8qLz3sKHlPnixJHn9gC3z93dNbeUk8-uW2HLEepr8Q

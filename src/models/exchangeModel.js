@@ -1,4 +1,4 @@
-//exchangeModel.js:
+// src/models/exchangeModel.js:
 import prisma from '../config/prismaClient.js';
 
 // Retorna todos os anúncios
@@ -40,13 +40,25 @@ const createExchange = async (dataExchange) => {
 
 
 
-// Fecha um anúncio (anúncio passa do estado ativo para inativo)
-const closeExchange = async (id) => {
+// Alterna o estado de um anúncio (de ativo para inativo e vice-versa)
+const exchangeState = async (id) => {
+  // Primeiro, buscamos o estado atual do anúncio
+  const exchange = await prisma.anuncios.findUnique({
+    where: { id },
+  });
+
+  if (!exchange) {
+    throw new Error('Anúncio não encontrado');
+  }
+
+  // Alteramos o estado de "ativo" para o oposto do que ele é atualmente
+  const newState = !exchange.ativo;
+
   return await prisma.anuncios.update({
     where: { id },
     data: {
-      ativo: false,
-      data_conclusao: new Date(),
+      ativo: newState,
+      data_conclusao: newState ? null : new Date(), // Define data_conclusao somente quando inativo
     },
   });
 };
@@ -72,9 +84,18 @@ const updateExchange = async (id, dataExchange) => {
 
 // Deleta os dados de um anúncio específico de acordo com o ID do anúncio
 const deleteExchange = async (id) => {
-  return await prisma.anuncios.delete({
+  const exchange = await prisma.anuncios.findUnique({
     where: { id },
   });
+
+  if (exchange) {
+	  
+	  // Deleta o usuário
+	  await prisma.anuncios.delete({
+		where: { id },
+	  });
+  }  
+  return exchange;
 };
 
 const exchangeModel = {
@@ -82,7 +103,7 @@ const exchangeModel = {
   exchangeById,
   exchangesByUserId,
   createExchange,
-  closeExchange,
+  exchangeState,
   updateExchange,
   deleteExchange,
 };

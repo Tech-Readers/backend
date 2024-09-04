@@ -2,15 +2,15 @@
 
 ### allUsers
 GET http://localhost:8000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzNzU5YzkxLWUxOWQtNGZkOC05OWRkLTk3MzhkNTJlODZiNCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyNTE3MjcxNywiZXhwIjoxNzI1MjU5MTE3fQ.dJW5zo_fu5vQeyAYu8y0kBffydFoYRHLYriIbAAt5js
 
 
 
 ###
 
 ### byIdUser
-GET http://localhost:8000/users/33d59649-5503-43db-a3bd-eb9ecf0f8866
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTAzMTcsImV4cCI6MTcyMjgxMzkxN30.kozTyn2YBzEDCj5yoaPD8i6aGShpEbCeMGjlISaXIho
+GET http://localhost:8000/users/d457578a-da2b-4e47-ab2e-69f4e51a815a
+Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzNzU5YzkxLWUxOWQtNGZkOC05OWRkLTk3MzhkNTJlODZiNCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyNTI4OTc3OCwiZXhwIjoxNzI1Mzc2MTc4fQ.ZdXxXdxxwM034fYT_t61dPobu8ULSNlsEZBBlpQHIEw
 
 ###
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "nome": "João da Silva",
-    "email": "joao@example.com",
+    "email": "joao3@example.com",
     "senha": "senha123",
     "enderecos": {
         "logradouro": "Rua Exemplo",
@@ -34,6 +34,9 @@ Content-Type: application/json
     "telefones": [
         {
             "contato": "999999999"
+        },
+        {
+            "contato": "299999999"
         }
     ]
 }
@@ -69,12 +72,12 @@ Content-Type: application/json
 ###
 
 ### updateUser
-PUT http://localhost:8000/users/90cfefd0-6854-4ad0-8faa-3b1c29b41a17
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwY2ZlZmQwLTY4NTQtNGFkMC04ZmFhLTNiMWMyOWI0MWExNyIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjcxNDc2MiwiZXhwIjoxNzIyNzE4MzYyfQ.1TOt4K8-liy_pPc-hWqOxIod-dypWq_Q4QXs20gJ44Q
+PUT http://localhost:8000/users/23759c91-e19d-4fd8-99dd-9738d52e86b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzNzU5YzkxLWUxOWQtNGZkOC05OWRkLTk3MzhkNTJlODZiNCIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyNTI1MjU0MCwiZXhwIjoxNzI1MzM4OTQwfQ.AYA6kzV5hl6aGLlA9u_wrlBtFVUuMy0X3KGZuJSIr7A
 Content-Type: application/json
 
 {
-    "nome": "João da Silva Novo",
+    "nome": "João da Silva Novo 2",
     "email": "joao@example.com",
     "senha": "senha123",
     "enderecos": {
@@ -98,8 +101,8 @@ Content-Type: application/json
 
 
 ### deleteUser
-DELETE http://localhost:8000/users/90cfefd0-6854-4ad0-8faa-3b1c29b41a17
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwY2ZlZmQwLTY4NTQtNGFkMC04ZmFhLTNiMWMyOWI0MWExNyIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjcxNDc2MiwiZXhwIjoxNzIyNzE4MzYyfQ.1TOt4K8-liy_pPc-hWqOxIod-dypWq_Q4QXs20gJ44Q
+DELETE http://localhost:8000/users/cfa69477-3fc1-4ede-a676-695bdfada2ff
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmYTY5NDc3LTNmYzEtNGVkZS1hNjc2LTY5NWJkZmFkYTJmZiIsImVtYWlsIjoiam9hbzJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUxNzI2NjksImV4cCI6MTcyNTI1OTA2OX0.mfHM4pDyaS9ONjuTwZJJCs3QHx4Z-SxHpNVexD36R6s
 
 
 
@@ -113,8 +116,8 @@ POST http://localhost:8000/users/login
 Content-Type: application/json
 
 {
-    "email": "joao@example.com",
-    "senha": "senha123"
+    "email": "maria@example.com",
+    "senha": "senha1234"
 }
 
 ###

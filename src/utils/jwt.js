@@ -12,7 +12,7 @@ const SECRET_JWT = process.env.SECRET_JWT;
 // o payload: é passado os dados do usuário incluídos no token
 // o expiresIn: configura o tempo para expirar o token
 const generateToken = (user) => {
-	return jwt.sign({id: user.id, email: user.email}, SECRET_JWT, {expiresIn: '1h'});
+	return jwt.sign({id: user.id, email: user.email}, SECRET_JWT, {expiresIn: '24h'});
 };
 
 // verifica a validade de um token JWT:

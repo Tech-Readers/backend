@@ -1,11 +1,18 @@
+// src/controllers/routerMessages.js:
 import express from 'express';
 import messageController from '../controllers/messageController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
 
 const routerMessages = express.Router();
 
-// Rota para obter todas as mensagens relacionadas a um anúncio específico.
-routerMessages.get('/exchanges/:anuncio_id', authMiddleware, messageController.getMessagesByExchangeId);
+// Rota para obter todas as conversas relacionadas a um usuário.
+routerMessages.get('/all', authMiddleware, messageController.getAllChatsByUserId);
+
+// Rota para obter todas as mensagens entre dois usuários
+routerMessages.get('/conversation/:usuarioRemetenteId/:usuarioDestinatarioId', authMiddleware, messageController.getMessagesBetweenUsers);
+
+// Rota para obter uma mensagem em específico.
+routerMessages.get('/:id', authMiddleware, messageController.getMessagesById);
 
 // Rota para criar uma nova mensagem.
 routerMessages.post('/', authMiddleware, messageController.createMessage);

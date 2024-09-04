@@ -1,17 +1,38 @@
+// src/models/messageSevice.js:
 import messageModel from '../models/messageModel.js';
 import Joi from 'joi';
 
 const messageSchema = Joi.object({
-    anuncio_id: Joi.string().required(),
     usuario_remetente_id: Joi.string().required(),
     usuario_destinatario_id: Joi.string().required(),
     texto: Joi.string().required(),
 });
 
-const getMessagesByExchangeId = async (anuncio_id, user_id) => {
-    if (!anuncio_id) throw new Error('ID do anúncio é obrigatório.');
 
-    const messages = await messageModel.getMessagesByExchangeId(anuncio_id);
+const getMessagesBetweenUsers = async (usuarioRemetenteId, usuarioDestinatarioId) => {
+    if (!usuarioRemetenteId || !usuarioDestinatarioId) throw new Error('IDs dos usuários são obrigatórios.');
+    
+    const messages = await messageModel.getMessagesBetweenUsers(usuarioRemetenteId, usuarioDestinatarioId);
+    
+    if (messages.length === 0) {
+      throw new Error('Não há mensagens entre esses usuários.');
+    }
+  
+    return messages;
+  };
+
+
+const getAllChatsByUserId = async (userId) => {
+    if (!userId) throw new Error('ID do usuário é obrigatório.');
+
+    return await messageModel.getAllChatsByUserId(userId);
+};  
+
+
+const getMessagesById = async (id, user_id) => {
+    if (!id) throw new Error('ID da mensagem é obrigatório.');
+
+    const messages = await messageModel.getMessagesById(id);
     
     // filtrar mensagens que o usuário tem permissão para ver
     const filteredMessages = messages.filter(message => 
@@ -38,9 +59,11 @@ const updateMessageRead = async (id) => {
 };
 
 const messageService = {
-    getMessagesByExchangeId,
+    getMessagesById,
     createMessage,
     updateMessageRead,
+    getMessagesBetweenUsers,
+    getAllChatsByUserId,
 };
 
 export default messageService;

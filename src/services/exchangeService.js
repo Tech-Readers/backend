@@ -97,14 +97,16 @@ const deleteExchange = async (id) => {
   return await exchangeModel.deleteExchange(id);
 };
 
-// Fecha um anúncio, atualizando seu estado para inativo e definindo a data de conclusão
-const closeExchange = async (id) => {
+
+
+// Fecha um anúncio, atualizando seu estado para inativo e vice-versa e definindo a data de conclusão
+const exchangeState = async (id) => {
   if (!id) throw new Error('ID é obrigatório.');
 
   const exchange = await exchangeModel.exchangeById(id);
   if (!exchange) throw new Error('Anúncio não encontrado.');
 
-  return await exchangeModel.closeExchange(id);
+  return await exchangeModel.exchangeState(id);
 };
 
 // Agrupa todas as funções em um objeto exchangeService e as exporta para serem usadas em outras partes da aplicação
@@ -115,7 +117,7 @@ const exchangeService = {
   createExchange,
   updateExchange,
   deleteExchange,
-  closeExchange,
+  exchangeState,
 };
 
 export default exchangeService;

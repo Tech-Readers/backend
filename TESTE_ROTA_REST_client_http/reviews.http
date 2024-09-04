@@ -3,13 +3,13 @@
 ### POST reviews
 POST http://localhost:8000/reviews
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MjUyODUsImV4cCI6MTcyMjgyODg4NX0.oRn_uvrWjC394AtV_7n8sK3g8vP4AlI0v3oZGiIsH9U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUyNTg3MDMsImV4cCI6MTcyNTM0NTEwM30._uHf0NteH8I_01FZVO_PWOB6RPGMXjPjzaR-JzJKBt0
 
 {
-    "nota": 5,
-    "comentario": "execelente troca",
-    "usuario_avaliador_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866",
-    "anuncio_id": "438d3c1a-a236-45ae-98ec-9e4f967fdd65"
+    "nota": 3, 
+    "comentario": "troca otima", 
+    "usuario_avaliador_id": "d457578a-da2b-4e47-ab2e-69f4e51a815a",
+    "anuncio_id": "41ea7bc0-9149-4ac6-acf3-c01335006668"
 }
 
 ### 

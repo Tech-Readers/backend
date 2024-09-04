@@ -1,4 +1,4 @@
-// userController.js:
+// src/controllers/userController.js:
 import userService from '../services/userService.js'
 
 // chama o serviço allUsers para obter todos os usuários
@@ -94,6 +94,7 @@ const login = async (req, res) => {
 	try {
 		const {email, senha} = req.body;
 		const {user, token} = await userService.login(email, senha);
+		res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' }); //  `secure: true` para HTTPS
 		res.status(200).json({id: user.id, nome: user.nome, token});
 	} catch (error) {
 		res.status(500).json({error: error.message});

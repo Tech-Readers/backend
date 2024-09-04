@@ -1,4 +1,4 @@
-//routerExchanges.js:
+// src/controllers/routerExchanges.js:
 import express from 'express';
 import exchangeController from '../controllers/exchangeController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
@@ -29,8 +29,8 @@ routerExchanges.delete('/:id', authMiddleware, exchangeController.deleteExchange
 
 
 // PATH /:id --> Fecha um anúncio (anúncio passa do estado ativo para inativo, 
-//altera "ativo: TRUE" para "ativo: FALSE" e insere o valor da "data_conclusão");
-routerExchanges.patch('/:id', authMiddleware, exchangeController.closeExchange);
+//altera "ativo: TRUE" para "ativo: FALSE" e vice-versa e insere o valor da "data_conclusão");
+routerExchanges.patch('/state/:id', authMiddleware, exchangeController.exchangeState);
 
 export default routerExchanges;
 

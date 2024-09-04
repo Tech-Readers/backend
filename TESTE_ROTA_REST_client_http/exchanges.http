@@ -3,18 +3,18 @@
 ### POST exchanges
 POST http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
 
 {
-    "titulo": "criando titulo de anuncio 2",
-    "titulo_livro_oferecido": "livro oferecido 2",
-    "autor_livro_oferecido": "autor do livro oferecido 2",
-    "genero_livro_oferecido": "genero do livro oferecido 2",
-    "titulo_livro_solicitado": "titulo do livro que quero 2",
-    "autor_livro_solicitado": "autor do livro que quero 2",
-    "genero_livro_solicitado": "gereno do livro que quero 2",
-    "descricao": "tanto faz 2",
-    "anunciante_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866"
+    "titulo": "titulo anuncio 10",
+    "titulo_livro_oferecido": "livro oferecido 7",
+    "autor_livro_oferecido": "autor do livro oferecido 67",
+    "genero_livro_oferecido": "genero do livro oferecido 7",
+    "titulo_livro_solicitado": "titulo do livro que quero 7",
+    "autor_livro_solicitado": "autor do livro que quero 67",
+    "genero_livro_solicitado": "gereno do livro que quero 7",
+    "descricao": "tanto faz 7",
+    "anunciante_id": "d457578a-da2b-4e47-ab2e-69f4e51a815a"
 }
 
 ###
@@ -23,51 +23,58 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5L
 ### GET exchanges
 GET http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
 ###
 
 ### GET exchanges/:id
 GET http://localhost:8000/exchanges/438d3c1a-a236-45ae-98ec-9e4f967fdd65
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzMjk3NTksImV4cCI6MTcyNTQxNjE1OX0.mS075oumrDW7zMPSD3wCCnd8YdHoPopQweVx2NDjfrw
 
 ###
 
 ### GET exchanges/user/:anunciante_id
-GET http://localhost:8000/exchanges/user/01b9370a-2aa7-4194-8e7a-a8a374b19288
+GET http://localhost:8000/exchanges/user/d457578a-da2b-4e47-ab2e-69f4e51a815a
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4NTUyMjUsImV4cCI6MTcyMjg1ODgyNX0.tS9hoLDL1_Fvutolzivp-i8FxIWyluPJUfMA9D41zAU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzMjk3NTksImV4cCI6MTcyNTQxNjE1OX0.mS075oumrDW7zMPSD3wCCnd8YdHoPopQweVx2NDjfrw
 
 ###
 
 ### PUT exchanges/:id
-PUT http://localhost:8000/exchanges/a2edd880-73ff-443f-aa0d-5cc49c865f95
+PUT http://localhost:8000/exchanges/0d07cb88-4cba-437a-ace9-bafc2c27ee5a
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzZDU5NjQ5LTU1MDMtNDNkYi1hM2JkLWViOWVjZjBmODg2NiIsImVtYWlsIjoiam9hb0BleGFtcGxlLmNvbSIsImlhdCI6MTcyMjg1NjQ0OCwiZXhwIjoxNzIyODYwMDQ4fQ.kiTbBWBUnHeD2PemqaAL4VHk-uB6D_9WNDsaxbBdURo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
 
 {
-    "titulo": "joão criando titulo de anuncio 2",
-    "titulo_livro_oferecido": "joão livro oferecido 2",
-    "autor_livro_oferecido": "autor do livro oferecido 2",
-    "genero_livro_oferecido": "genero do livro oferecido 2",
-    "titulo_livro_solicitado": "titulo do livro que quero 2",
-    "autor_livro_solicitado": "autor do livro que quero 2",
-    "genero_livro_solicitado": "gereno do livro que quero 2",
-    "descricao": "tanto faz 2",
-    "anunciante_id": "33d59649-5503-43db-a3bd-eb9ecf0f8866"
+    "titulo": "titulo anuncio 7 novo atualizado 3",
+    "titulo_livro_oferecido": "livro oferecido 7",
+    "autor_livro_oferecido": "autor do livro oferecido 67",
+    "genero_livro_oferecido": "genero do livro oferecido 7",
+    "titulo_livro_solicitado": "titulo do livro que quero 7",
+    "autor_livro_solicitado": "autor do livro que quero 67",
+    "genero_livro_solicitado": "gereno do livro que quero 7",
+    "descricao": "tanto faz 7",
+    "anunciante_id": "d457578a-da2b-4e47-ab2e-69f4e51a815a",
+    "image": "https://storage.googleapis.com/tech-readers.appspot.com/1725361953541.jpg?GoogleAccessId=firebase-adminsdk-c1zk3%40tech-readers.iam.gserviceaccount.com&Expires=16447028400&Signature=AqjxckWWslPWkFZ73b6vs02yqqR3NTCwcZAXyw4Yfusv8ZQFGTP0uCjZRQXLYSmugkVqsgzVUGFOxasY22gvwX2FydsCdw6A%2F7gBBqFRL%2F5uQb0V%2BiQ%2FxSMTODcXbxZ0iLnxbvTh5rH9LrXzKg1UOP2SU5kM9i5Egl51Xs9QtvsQx2pUgk7q1Fx1nTK5dziNENUVvg2IJ6zPznBp%2F9YtC6j2VUfuux4laoMM8%2F3w4sxIomiyB97zruUhpdfWmdZZSqxu7dIbOnqBKi%2FjcV2JKRi%2BnpiF8lQLVvk5KpqC2CRlgb%2BS1NZLctPbUPH0n0tn5dqBBJtaRDe4pvWoWBt68g%3D%3D",
+    "ativo": true
 }
 
 ###
 
-### PATH exchanges/:id
-PATCH  http://localhost:8000/exchanges/438d3c1a-a236-45ae-98ec-9e4f967fdd65
+### PATH exchanges/state/:id
+PATCH  http://localhost:8000/exchanges/state/41ea7bc0-9149-4ac6-acf3-c01335006668
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
 
 ###
+# 41ea7bc0-9149-4ac6-acf3-c01335006668 --> true |  "anunciante_id": "23759c91-e19d-4fd8-99dd-9738d52e86b4
+
+# 84f9062f-fed5-4d62-b1c5-38ce8e89e5bb  --> true | "anunciante_id": "d457578a-da2b-4e47-ab2e-69f4e51a815a"
+
+# 0d07cb88-4cba-437a-ace9-bafc2c27ee5a --> true | "anunciante_id": "d457578a-da2b-4e47-ab2e-69f4e51a815a"
 
 ### DELETE exchanges/:id
-DELETE  http://localhost:8000/exchanges/438d3c1a-a236-45ae-98ec-9e4f967fdd65
+DELETE  http://localhost:8000/exchanges/fd57185e-dbca-482b-8ef3-78a06dc0f278
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxYjkzNzBhLTJhYTctNDE5NC04ZTdhLWE4YTM3NGIxOTI4OCIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjI4MTc0ODMsImV4cCI6MTcyMjgyMTA4M30.z9skYX8OxHP-Rdi7gpbfVXlSLxeBoHB6R-kYINhpp-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzMjk3NTksImV4cCI6MTcyNTQxNjE1OX0.mS075oumrDW7zMPSD3wCCnd8YdHoPopQweVx2NDjfrw
 

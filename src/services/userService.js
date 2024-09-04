@@ -16,20 +16,36 @@ const addressSchema = Joi.object({
   uf: Joi.string().length(2).required(),
 });
 
+
+
 // esquema de validação com Joi: valida os dados do telefone
 const phoneSchema = Joi.object({
   contato: Joi.string().required(),
 });
 
-// esquema de validação com Joi: valida os dados do usuario, incluindo endereço e telefone
-const userSchema = Joi.object({
+
+// esquema de validação com Joi: valida os dados do usuário ao criar
+const userCreateSchema = Joi.object({
   nome: Joi.string().required(),
+  bio: Joi.string().allow(null, ''),
   email: Joi.string().email().required(),
-  senha: Joi.string().min(6).max(10).required(),
+  senha: Joi.string().min(6).max(10).required(), // Senha é obrigatória ao criar
   enderecos: addressSchema,
   telefones: Joi.array().items(phoneSchema).min(1),
   image: Joi.string().allow(null, '')
 });
+
+// esquema de validação com Joi: valida os dados do usuário ao atualizar
+const userUpdateSchema = Joi.object({
+  nome: Joi.string().required(),
+  bio: Joi.string().allow(null, ''),
+  email: Joi.string().email().required(),
+  senha: Joi.string().min(6).max(10).allow(null, ''), // Senha pode ser nula ou vazia ao atualizar
+  enderecos: addressSchema,
+  telefones: Joi.array().items(phoneSchema).min(1),
+  image: Joi.string().allow(null, '')
+});
+
 
 // busca um usuário pelo ID, validando a entrada e verificando se o usuário existe
 const byIdUser = async (id) => {
@@ -50,7 +66,7 @@ const allUsers = async () => {
 
 // valida os dados do usuário, verifica se o email já está em uso, criptografa a senha e cria um novo usuário no banco de dados
 const createUser = async (dataUser, file) => {
-  const { error } = userSchema.validate(dataUser);
+  const { error } = userCreateSchema.validate(dataUser);
   if (error) {
     throw new Error(error.details.map((detail) => detail.message).join(' '));
   }
@@ -79,10 +95,10 @@ const createUser = async (dataUser, file) => {
 const updateUser = async (id, dataUser, file) => {
   if (!id) throw new Error('ID é obrigatório.');
 
-  const { error } = userSchema.validate(dataUser);
+  const { error } = userUpdateSchema.validate(dataUser);
   if (error) {
     throw new Error(error.details.map((detail) => detail.message).join(' '));
-  };
+  }
 
   const user = await userModel.byIdUser(id);
   if (!user) throw new Error('Usuário não encontrado.');
@@ -90,17 +106,21 @@ const updateUser = async (id, dataUser, file) => {
   const existingUser = await userModel.byEmailUser(dataUser.email);
   if (existingUser && existingUser.id !== id) {
     throw new Error('E-mail já está em uso!');
-  };
+  }
 
   if (file) {
     dataUser.image = await uploadImageFirebase(file);
-  }else{
+  } else {
     dataUser.image = dataUser.image || undefined;
-  };
+  }
 
-  if (dataUser.senha) {
+  // Apenas criptografa e atualiza a senha se um novo valor for fornecido
+  if (dataUser.senha && dataUser.senha.trim() !== '') {
     const hashedPassword = await bcrypt.hash(dataUser.senha, 10);
     dataUser.senha = hashedPassword;
+  } else {
+    // Remove o campo senha do objeto dataUser para evitar que ele seja alterado
+    delete dataUser.senha;
   }
 
   return await userModel.updateUser(id, dataUser);

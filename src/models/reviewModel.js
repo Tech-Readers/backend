@@ -1,3 +1,4 @@
+// src/models/reviewModel.js:
 import prisma from '../config/prismaClient.js';
 
 const byIdExchange = async(anuncio_id) => {

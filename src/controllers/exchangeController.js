@@ -1,4 +1,4 @@
-////exchangeController.js:
+// src/controllers/exchangeController.js:
 import exchangeService from '../services/exchangeService.js';
 
 // Chama o serviço allExchanges para obter todos os anúncios
@@ -77,12 +77,14 @@ const deleteExchange = async (req, res) => {
   }
 };
 
-// Chama o serviço closeExchange para fechar um anúncio (tornar inativo) com o ID fornecido
+
+
+// Chama o serviço exchangeState para fechar um anúncio (tornar inativo) e vice-versa com o ID fornecido
 // Retorna o anúncio atualizado com status 200 (OK) em caso de sucesso
 // Retorna uma mensagem de erro com status 500 (Internal Server Error) em caso de falha
-const closeExchange = async (req, res) => {
+const exchangeState = async (req, res) => {
   try {
-    const exchange = await exchangeService.closeExchange(req.params.id);
+    const exchange = await exchangeService.exchangeState(req.params.id);
     res.status(200).json(exchange);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -97,7 +99,7 @@ const exchangeController = {
   createExchange,
   updateExchange,
   deleteExchange,
-  closeExchange,
+  exchangeState,
 };
 
 export default exchangeController;

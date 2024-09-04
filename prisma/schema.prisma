@@ -22,9 +22,8 @@ model anuncios {
   descricao               String?
   image                   String?
   anunciante_id           String       @db.Uuid
-  usuarios                usuarios     @relation(fields: [anunciante_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios                usuarios     @relation(fields: [anunciante_id], references: [id], onDelete: NoAction, onUpdate: Cascade)
   avaliacoes              avaliacoes[]
-  mensagens               mensagens[]
 }
 
 
@@ -36,8 +35,8 @@ model avaliacoes {
   qtd_like             Int?     @default(0)
   usuario_avaliador_id String   @db.Uuid
   anuncio_id           String   @db.Uuid
-  anuncios             anuncios @relation(fields: [anuncio_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  usuarios             usuarios @relation(fields: [usuario_avaliador_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  anuncios             anuncios @relation(fields: [anuncio_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  usuarios             usuarios @relation(fields: [usuario_avaliador_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 
@@ -61,10 +60,8 @@ model mensagens {
   lido                                                 Boolean  @default(false)
   usuario_remetente_id                                 String   @db.Uuid
   usuario_destinatario_id                              String   @db.Uuid
-  anuncio_id                                           String   @db.Uuid
-  anuncios                                             anuncios @relation(fields: [anuncio_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  usuarios_mensagens_usuario_destinatario_id           usuarios @relation("mensagens_usuario_destinatario_idTousuarios", fields: [usuario_destinatario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  usuarios_mensagens_usuario_remetente_id              usuarios @relation("mensagens_usuario_remetente_idTousuarios", fields: [usuario_remetente_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios_mensagens_usuario_destinatario_id           usuarios @relation("mensagens_usuario_destinatario_idTousuarios", fields: [usuario_destinatario_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  usuarios_mensagens_usuario_remetente_id              usuarios @relation("mensagens_usuario_remetente_idTousuarios", fields: [usuario_remetente_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 
@@ -79,6 +76,7 @@ model telefones {
 model usuarios {
   id                                                    String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nome                                                  String       @db.VarChar(255)
+  bio                                                   String?      @db.VarChar(255)
   email                                                 String       @unique @db.VarChar(255)
   senha                                                 String       @db.VarChar(255)
   data_cadastro                                         DateTime     @default(now()) @db.Timestamp(6)
@@ -91,4 +89,6 @@ model usuarios {
   telefones                                             telefones[]
   enderecos                                             enderecos    @relation(fields: [endereco_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
+
+
 

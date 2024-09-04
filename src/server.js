@@ -1,3 +1,4 @@
+// src/serve.js:
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -5,6 +6,7 @@ import routerUsers from './routes/routerUsers.js'
 import routerExchanges from './routes/routerExchanges.js';
 import routerMessages from './routes/routerMessages.js';
 import routerReviews from './routes/routerReviews.js';
+import cookieParser from 'cookie-parser';
 
 // dotenv para carregar variáveis de ambiente de um arquiv
 dotenv.config();
@@ -18,9 +20,19 @@ const PORT = process.env.PORT;
 
 // módulo CORS para permitir ou restringir requisições de diferentes domínios
 
-// habilita o cors para permitir requisições de outros domínios
-app.use(cors());
 
+// app.use(cors());
+// habilita o cors para permitir requisições de outros domínios e permitir cookies
+app.use(cors({
+	origin: process.env.URL, // Substitua pelo URL do seu frontend
+	credentials: true, // Permite envio de cookies
+}));
+
+
+// app.use(express.json());
+// Middleware para parsing de cookies
+app.use(cookieParser());
+  
 // habilita o middleware de parsing de JSON para que o servidor possa interpretar requisições em JSON
 app.use(express.json());
 

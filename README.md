@@ -117,19 +117,21 @@
   -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
   -	GET /exchanges/users/{id_user}: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
   -	POST /exchanges: Cria um novo anúncio;
-  -	PATH /exchanges/{id}/close: Fecha um anúncio (anúncio passa do estado ativo para inativo, altera "ativo: TRUE" para "ativo: FALSE" e insere o valor da “data_conclusao”);
+  -	PATH /exchanges/state/{id}: Alterna o estado de um anúncio (de ativo para inativo e vice-versa) e insere o valor da “data_conclusao” quando altera para inativo;
   -	PUT /exchanges/{id}: Atualiza os dados de um anúncio específico de acordo com o ID do anúncio;
   -	DELETE /exchanges/{id}: Deleta os dados de um anúncio específico de acordo com o ID do anúncio.
 
 
 
-3. **Mensagens:** :heavy_check_mark:
-  -	GET messages/exchanges/{id_anuncio}: Retorna todas as mensagens referentes a um anúncio específico  de acordo com o ID do anúncio. Apenas os usuários envolvidos (usuário que enviou e usuário que recebeu) podem ver as mensagens;
+2. **Mensagens:** :heavy_check_mark:
+  -	GET messages/{id}: Retorna uma mensagem especifica;
+  - GET messages/all: Retorna todas as conversas relacionadas a um usuário;
+  - GET messages/conversation/{usuarioRemetenteId}/{usuarioDestinatarioId}: todas as mensagens trocadas entre dois usuários específicos;
   -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
   -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
 
 
-4. **Avaliacoes:** :heavy_check_mark:
+3. **Avaliacoes:** :heavy_check_mark:
   -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
   -	GET /reviews/{id_anuncio}/exchanges: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
   -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);

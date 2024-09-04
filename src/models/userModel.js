@@ -1,4 +1,4 @@
-// userModel.js:
+// src/models/userModel.js:
 import prisma from '../config/prismaClient.js';
 
 // busca um usuario no banco de dados com base no email
@@ -38,6 +38,7 @@ const createUser = async(dataUser) => {
 	return await prisma.usuarios.create({
 		data: {
 			nome: dataUser.nome,
+			bio: dataUser.bio,
 			email: dataUser.email,
 			senha: dataUser.senha,
 			enderecos: {
@@ -73,6 +74,7 @@ const updateUser = async(id, dataUser) => {
 	  where: {id},
 	  data: {
 		nome: dataUser.nome,
+		bio: dataUser.bio,
 		email: dataUser.email,
 		senha: dataUser.senha,
 		image: dataUser.image
