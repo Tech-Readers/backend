@@ -4,8 +4,9 @@ import Joi from 'joi';
 
 const reviewSchema = Joi.object({
   nota: Joi.number().required(),
-  comentario: Joi.string().optional(),
-  qtd_like: Joi.number().optional(),
+  // comentario: Joi.string().optional(),
+  comentario: Joi.string().allow(null, ''),
+  qtd_like: Joi.number().allow(null, ''),
   usuario_avaliador_id: Joi.string().required(),
   anuncio_id: Joi.string().required(),
 

@@ -3,10 +3,10 @@
 ### POST exchanges
 POST http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjU1NDM2MTMsImV4cCI6MTcyNTYzMDAxM30.zZBgFzoy__gpbu7hofuTXkiDk9qGKs5ggCPqPVAbGZk
 
 {
-    "titulo": "titulo anuncio 10",
+    "titulo": "esse titulo anuncio 10",
     "titulo_livro_oferecido": "livro oferecido 7",
     "autor_livro_oferecido": "autor do livro oferecido 67",
     "genero_livro_oferecido": "genero do livro oferecido 7",
@@ -23,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhL
 ### GET exchanges
 GET http://localhost:8000/exchanges
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjUzNDQxNzEsImV4cCI6MTcyNTQzMDU3MX0.5bkUb3aA8B3tBi_tgig6zaAkb8ODny2awdIAHG8ZUcg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NTc1NzhhLWRhMmItNGU0Ny1hYjJlLTY5ZjRlNTFhODE1YSIsImVtYWlsIjoibWFyaWFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjU1NDM2MTMsImV4cCI6MTcyNTYzMDAxM30.zZBgFzoy__gpbu7hofuTXkiDk9qGKs5ggCPqPVAbGZk
 ###
 
 ### GET exchanges/:id
