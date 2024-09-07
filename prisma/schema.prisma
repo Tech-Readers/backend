@@ -22,7 +22,7 @@ model anuncios {
   descricao               String?
   image                   String?
   anunciante_id           String       @db.Uuid
-  usuarios                usuarios     @relation(fields: [anunciante_id], references: [id], onDelete: NoAction, onUpdate: Cascade)
+  usuarios                usuarios     @relation(fields: [anunciante_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
   avaliacoes              avaliacoes[]
 }
 
