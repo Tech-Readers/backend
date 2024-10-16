@@ -104,9 +104,56 @@
 ## Rotas - EndPoints :arrows_clockwise:
 
 1. **Usuarios:** :heavy_check_mark:
-  -	GET /users: Retorna todos os usuários;
-  -	GET /users/{id}: Retorna um usuário específico de acordo com ID do usuário;
-  -	POST /users: Cadastra um novo usuário;
+  **-	GET /users**
+    - Descrição: Retorna todos os usuários cadastrados.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de usuários.
+      - Exemplo de Resposta:
+      ```bash
+      json
+      [
+        {
+          "id": "uuid",
+          "nome": "Nome do Usuário",
+          "email": "email@example.com",
+          "data_cadastro": "2024-10-14T12:00:00Z"
+        }
+      ]
+      ```
+
+  **-	GET /users/{id}** 
+    - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Detalhes do usuário. Exemplo de Resposta: 
+      ```bash
+        json
+        {
+          "id": "uuid",
+          "nome": "Nome do Usuário",
+          "email": "email@example.com",
+          "data_cadastro": "2024-10-14T12:00:00Z"
+        }
+      ```
+      - 404 Not Found: Usuário não encontrado.
+
+  **-	POST /users**
+    - Descrição: Cadastra um novo usuário.
+    - Autenticação: Não é necessária.
+    - Parâmetros (JSON):
+    ```bash
+        json
+        {
+          "nome": "Nome do Usuário",
+          "email": "email@example.com",
+          "senha": "password123"
+        }       
+    ```
+    - Resposta:
+      - 201 Created: Usuário criado com sucesso.
+      - 400 Bad Request: E-mail já registrado.
+
   -	PUT /users/{id}: Atualiza os dados de um usuário específico de acordo com o ID do usuário;
   -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário;
   - POST /users/login: Autentica um usuário e retorna o token JWT.
