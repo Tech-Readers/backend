@@ -195,7 +195,7 @@ json
     - 401 Unauthorized: Credenciais inválidas.
 
 
-1. Anúncios :heavy_check_mark:
+2. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
   - Descrição: Retorna todos os anúncios.
@@ -260,7 +260,8 @@ json
   - Resposta:
     - 204 No Content.
     - 404 Not Found: Anúncio não encontrado.
-  
+
+
 3. Mensagens :heavy_check_mark:
    
   **-GET /messages/{id}**
@@ -302,6 +303,7 @@ json
   - Resposta:
     - 200 OK: Mensagem marcada como lida.
     - 404 Not Found: Mensagem não encontrada.
+
 
 4. Avaliações :heavy_check_mark:
    
