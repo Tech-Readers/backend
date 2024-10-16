@@ -113,8 +113,8 @@
     - Resposta:
       - 200 OK: Lista de usuários.
       - Exemplo de Resposta:
-      ```plaintext
-      json
+```
+json
       [
         {
           "id": "uuid",
@@ -123,35 +123,36 @@
           "data_cadastro": "2024-10-14T12:00:00Z"
         }
       ] 
-      ```
+```
 
   **-	GET /users/{id}**
     - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
     - Autenticação: Bearer Token.
     - Resposta:
       - 200 OK: Detalhes do usuário. Exemplo de Resposta:
-      ```plaintext
-      json
+```
+json
       {
         "id": "uuid",
         "nome": "Nome do Usuário",
         "email": "email@example.com",
         "data_cadastro": "2024-10-14T12:00:00Z"
       } 
-      ```
+```
       - 404 Not Found: Usuário não encontrado.
   
   **-POST /users**
     - Descrição: Cadastra um novo usuário.
     - Autenticação: Não é necessária.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "nome": "Nome do Usuário",
       "email": "email@example.com",
       "senha": "password123"
     } 
-    ```
+```
     - Resposta:
       - 201 Created: Usuário criado com sucesso.
       - 400 Bad Request: E-mail já registrado.
@@ -160,12 +161,13 @@
     - Descrição: Atualiza os dados de um usuário específico de acordo com o ID do usuário.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "nome": "Novo Nome",
       "email": "novoemail@example.com"
     } 
-    ```
+```
     - Resposta:
       - 200 OK: Usuário atualizado com sucesso.
       - 404 Not Found: Usuário não encontrado.
@@ -181,18 +183,19 @@
     - Descrição: Autentica um usuário e retorna o token JWT.
     - Autenticação: Não é necessária.
     - Parâmetros (JSON):
-    ```json
+```
+json
     {
       "email": "email@example.com",
       "senha": "password123"
     }
-    ```
+```
     - Resposta:
       - 200 OK: Token JWT retornado.
       - 401 Unauthorized: Credenciais inválidas.
 
 
-1. Anúncios :heavy_check_mark:
+2. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
     - Descrição: Retorna todos os anúncios.
@@ -200,7 +203,6 @@
     - Resposta:
       - 200 OK: Lista de objetos JSON.
   
-
   **-GET /exchanges/{id}**
     - Descrição: Retorna um anúncio específico de acordo com o ID do anúncio.
     - Autenticação: Bearer Token.
@@ -218,14 +220,15 @@
     - Descrição: Cria um novo anúncio.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "titulo": "Título do Anúncio",
       "titulo_livro_oferecido": "Livro Oferecido",
       "titulo_livro_solicitado": "Livro Solicitado",
       "descricao": "Descrição"
     }
-    ```
+```
     - Resposta:
       - 201 Created: Anúncio criado com sucesso.
 
@@ -240,12 +243,13 @@
     - Descrição: Atualiza os dados de um anúncio específico.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "titulo": "Novo Título",
       "descricao": "Nova Descrição"
     }
-    ```
+```
     - Resposta:
       - 200 OK: Objeto JSON.
       - 404 Not Found: Anúncio não encontrado.
@@ -282,12 +286,13 @@
     - Descrição: Envia uma mensagem referente a um anúncio específico.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "usuario_destinatario_id": "uuid",
       "texto": "Conteúdo da mensagem"
     }
-    ```
+```
     - Resposta:
       - 201 Created: Mensagem enviada com sucesso.
   
@@ -304,13 +309,14 @@
     - Descrição: Cria uma avaliação referente a um anúncio específico.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "anuncio_id": "uuid",
       "nota": 5,
       "comentario": "Ótima troca"
     }
-    ```
+```
     - Resposta:
       - 201 Created: Objeto JSON.
 
@@ -330,12 +336,13 @@
     - Descrição: Altera os dados de uma avaliação específica.
     - Autenticação: Bearer Token.
     - Parâmetros (JSON):
-    ```json
+```
+    json
     {
       "nota": 4,
       "comentario": "Boa experiência"
     }
-    ```
+```
     - Resposta:
       - 200 OK: Objeto JSON.
   
