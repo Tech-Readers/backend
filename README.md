@@ -192,7 +192,7 @@
       - 401 Unauthorized: Credenciais inválidas.
 
 
-2. Anúncios :heavy_check_mark:
+1. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
     - Descrição: Retorna todos os anúncios.
