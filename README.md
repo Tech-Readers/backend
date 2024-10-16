@@ -146,7 +146,7 @@ json
   - Autenticação: Não é necessária.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "nome": "Nome do Usuário",
       "email": "email@example.com",
@@ -162,7 +162,7 @@ json
   - Autenticação: Bearer Token.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "nome": "Novo Nome",
       "email": "novoemail@example.com"
@@ -221,7 +221,7 @@ json
   - Autenticação: Bearer Token.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "titulo": "Título do Anúncio",
       "titulo_livro_oferecido": "Livro Oferecido",
@@ -244,7 +244,7 @@ json
   - Autenticação: Bearer Token.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "titulo": "Novo Título",
       "descricao": "Nova Descrição"
@@ -287,7 +287,7 @@ json
   - Autenticação: Bearer Token.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "usuario_destinatario_id": "uuid",
       "texto": "Conteúdo da mensagem"
@@ -310,7 +310,7 @@ json
  - Autenticação: Bearer Token.
  - Parâmetros (JSON):
 ```
-    json
+json
     {
       "anuncio_id": "uuid",
       "nota": 5,
@@ -337,7 +337,7 @@ json
   - Autenticação: Bearer Token.
   - Parâmetros (JSON):
 ```
-    json
+json
     {
       "nota": 4,
       "comentario": "Boa experiência"
