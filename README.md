@@ -108,7 +108,7 @@
 1. **Usuarios:** :heavy_check_mark:
    
   **-	GET /users**
-    - Descrição: Retorna todos os usuários cadastrados.
+    - Descrição: Retorna todos os usuários cadastrados. 
     - Autenticação: Bearer Token.
     - Resposta:
       - 200 OK: Lista de usuários.
@@ -126,10 +126,10 @@ json
 ```
 
   **-	GET /users/{id}**
-    - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Detalhes do usuário. Exemplo de Resposta:
+  - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Detalhes do usuário. Exemplo de Resposta:
 ```
 json
       {
@@ -142,9 +142,9 @@ json
       - 404 Not Found: Usuário não encontrado.
   
   **-POST /users**
-    - Descrição: Cadastra um novo usuário.
-    - Autenticação: Não é necessária.
-    - Parâmetros (JSON):
+  - Descrição: Cadastra um novo usuário.
+  - Autenticação: Não é necessária.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -153,14 +153,14 @@ json
       "senha": "password123"
     } 
 ```
-    - Resposta:
-      - 201 Created: Usuário criado com sucesso.
-      - 400 Bad Request: E-mail já registrado.
+  - Resposta:
+    - 201 Created: Usuário criado com sucesso.
+    - 400 Bad Request: E-mail já registrado.
   
   **-PUT /users/{id}**
-    - Descrição: Atualiza os dados de um usuário específico de acordo com o ID do usuário.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+  - Descrição: Atualiza os dados de um usuário específico de acordo com o ID do usuário.
+  - Autenticação: Bearer Token.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -168,21 +168,21 @@ json
       "email": "novoemail@example.com"
     } 
 ```
-    - Resposta:
-      - 200 OK: Usuário atualizado com sucesso.
-      - 404 Not Found: Usuário não encontrado.
+  - Resposta:
+    - 200 OK: Usuário atualizado com sucesso.
+    - 404 Not Found: Usuário não encontrado.
 
   **-DELETE /users/{id}**
-    - Descrição: Deleta os dados de um usuário específico de acordo com o ID do usuário.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 204 No Content.
-      - 404 Not Found: Usuário não encontrado.
+  - Descrição: Deleta os dados de um usuário específico de acordo com o ID do usuário.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 204 No Content.
+    - 404 Not Found: Usuário não encontrado.
   
   **-POST /users/login**
-    - Descrição: Autentica um usuário e retorna o token JWT.
-    - Autenticação: Não é necessária.
-    - Parâmetros (JSON):
+  - Descrição: Autentica um usuário e retorna o token JWT.
+  - Autenticação: Não é necessária.
+  - Parâmetros (JSON):
 ```
 json
     {
@@ -190,36 +190,36 @@ json
       "senha": "password123"
     }
 ```
-    - Resposta:
-      - 200 OK: Token JWT retornado.
-      - 401 Unauthorized: Credenciais inválidas.
+  - Resposta:
+    - 200 OK: Token JWT retornado.
+    - 401 Unauthorized: Credenciais inválidas.
 
 
 2. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
-    - Descrição: Retorna todos os anúncios.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de objetos JSON.
+  - Descrição: Retorna todos os anúncios.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de objetos JSON.
   
   **-GET /exchanges/{id}**
-    - Descrição: Retorna um anúncio específico de acordo com o ID do anúncio.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Detalhes do anúncio (objeto em JSON).
-      - 404 Not Found: Anúncio não encontrado.
+  - Descrição: Retorna um anúncio específico de acordo com o ID do anúncio.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Detalhes do anúncio (objeto em JSON).
+    - 404 Not Found: Anúncio não encontrado.
   
   **-GET /exchanges/users/{id_user}**
-    - Descrição: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de objetos JSON.
+  - Descrição: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de objetos JSON.
   
   **-POST /exchanges**
-    - Descrição: Cria um novo anúncio.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+  - Descrição: Cria um novo anúncio.
+  - Autenticação: Bearer Token.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -229,20 +229,20 @@ json
       "descricao": "Descrição"
     }
 ```
-    - Resposta:
-      - 201 Created: Anúncio criado com sucesso.
+  - Resposta:
+    - 201 Created: Anúncio criado com sucesso.
 
   **- PATCH /exchanges/state/{id}**
-    - Descrição: Alterna o estado de um anúncio (de ativo para inativo e vice-versa) e insere o valor da "data_conclusao" quando o anúncio é inativado.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Estado alterado com sucesso.
-      - 404 Not Found: Anúncio não encontrado.
+  - Descrição: Alterna o estado de um anúncio (de ativo para inativo e vice-versa) e insere o valor da "data_conclusao" quando o anúncio é inativado.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Estado alterado com sucesso.
+    - 404 Not Found: Anúncio não encontrado.
   
   **-PUT /exchanges/{id}**
-    - Descrição: Atualiza os dados de um anúncio específico.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+  - Descrição: Atualiza os dados de um anúncio específico.
+  - Autenticação: Bearer Token.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -250,42 +250,42 @@ json
       "descricao": "Nova Descrição"
     }
 ```
-    - Resposta:
-      - 200 OK: Objeto JSON.
-      - 404 Not Found: Anúncio não encontrado.
+  - Resposta:
+    - 200 OK: Objeto JSON.
+    - 404 Not Found: Anúncio não encontrado.
   
   **-DELETE /exchanges/{id}**
-    - Descrição: Deleta um anúncio específico.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 204 No Content.
-      - 404 Not Found: Anúncio não encontrado.
+  - Descrição: Deleta um anúncio específico.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 204 No Content.
+    - 404 Not Found: Anúncio não encontrado.
   
 3. Mensagens :heavy_check_mark:
    
   **-GET /messages/{id}**
-    - Descrição: Retorna uma mensagem específica.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Objeto JSON.
-      - 404 Not Found: Mensagem não encontrada.
+ - Descrição: Retorna uma mensagem específica.
+ - Autenticação: Bearer Token.
+ - Resposta:
+    - 200 OK: Objeto JSON.
+    - 404 Not Found: Mensagem não encontrada.
   
   **-GET /messages/all**
-    - Descrição: Retorna todas as conversas relacionadas a um usuário.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de objetos JSON.
+  - Descrição: Retorna todas as conversas relacionadas a um usuário.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de objetos JSON.
   
   **-GET /messages/conversation/{usuarioRemetenteId}/{usuarioDestinatarioId}**
-    - Descrição: Retorna todas as mensagens trocadas entre dois usuários específicos.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de objetos JSON.
+  - Descrição: Retorna todas as mensagens trocadas entre dois usuários específicos.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de objetos JSON.
 
   **-POST /messages**
-    - Descrição: Envia uma mensagem referente a um anúncio específico.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+  - Descrição: Envia uma mensagem referente a um anúncio específico.
+  - Autenticação: Bearer Token.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -293,22 +293,22 @@ json
       "texto": "Conteúdo da mensagem"
     }
 ```
-    - Resposta:
-      - 201 Created: Mensagem enviada com sucesso.
+  - Resposta:
+    - 201 Created: Mensagem enviada com sucesso.
   
   **-PATCH /messages/{id}/read**
-    - Descrição: Marca uma mensagem como lida (altera o campo "lido" de false para true).
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Mensagem marcada como lida.
-      - 404 Not Found: Mensagem não encontrada.
+  - Descrição: Marca uma mensagem como lida (altera o campo "lido" de false para true).
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Mensagem marcada como lida.
+    - 404 Not Found: Mensagem não encontrada.
 
 4. Avaliações :heavy_check_mark:
    
   **-POST /reviews**
-    - Descrição: Cria uma avaliação referente a um anúncio específico.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+ - Descrição: Cria uma avaliação referente a um anúncio específico.
+ - Autenticação: Bearer Token.
+ - Parâmetros (JSON):
 ```
     json
     {
@@ -317,25 +317,25 @@ json
       "comentario": "Ótima troca"
     }
 ```
-    - Resposta:
-      - 201 Created: Objeto JSON.
+  - Resposta:
+    - 201 Created: Objeto JSON.
 
   **-GET /reviews/{id_anuncio}/exchanges**
-    - Descrição: Retorna todas as avaliações de um anúncio específico.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de objetos JSON.
+  - Descrição: Retorna todas as avaliações de um anúncio específico.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de objetos JSON.
   
   **-PATCH /reviews/{id}/like**
-    - Descrição: Curte uma avaliação (incrementa o campo qtd_like).
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Avaliação curtida com sucesso.
+  - Descrição: Curte uma avaliação (incrementa o campo qtd_like).
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Avaliação curtida com sucesso.
   
   **-PUT /reviews/{id}**
-    - Descrição: Altera os dados de uma avaliação específica.
-    - Autenticação: Bearer Token.
-    - Parâmetros (JSON):
+  - Descrição: Altera os dados de uma avaliação específica.
+  - Autenticação: Bearer Token.
+  - Parâmetros (JSON):
 ```
     json
     {
@@ -343,14 +343,14 @@ json
       "comentario": "Boa experiência"
     }
 ```
-    - Resposta:
-      - 200 OK: Objeto JSON.
+  - Resposta:
+    - 200 OK: Objeto JSON.
   
   **-DELETE /reviews/{id}**
-    - Descrição: Deleta uma avaliação específica.
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 204 No Content.
+  - Descrição: Deleta uma avaliação específica.
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 204 No Content.
 
 
 ## Instação das depedências :arrow_down_small:
