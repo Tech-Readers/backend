@@ -108,11 +108,11 @@
 1. **Usuarios:** :heavy_check_mark:
    
   **-	GET /users**
-    - Descrição: Retorna todos os usuários cadastrados. 
-    - Autenticação: Bearer Token.
-    - Resposta:
-      - 200 OK: Lista de usuários.
-      - Exemplo de Resposta:
+  - Descrição: Retorna todos os usuários cadastrados. 
+  - Autenticação: Bearer Token.
+  - Resposta:
+    - 200 OK: Lista de usuários.
+    - Exemplo de Resposta:
 ```
 json
       [
@@ -195,7 +195,7 @@ json
     - 401 Unauthorized: Credenciais inválidas.
 
 
-2. Anúncios :heavy_check_mark:
+1. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
   - Descrição: Retorna todos os anúncios.
