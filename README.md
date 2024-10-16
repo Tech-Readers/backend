@@ -1,3 +1,4 @@
+atualize e gere o README.md:
 <h1>Conectando Leitores</h1> 
 
 <p align="center">
@@ -104,14 +105,14 @@
 ## Rotas - EndPoints :arrows_clockwise:
 
 1. **Usuarios:** :heavy_check_mark:
+   
   **-	GET /users**
     - Descrição: Retorna todos os usuários cadastrados.
     - Autenticação: Bearer Token.
     - Resposta:
       - 200 OK: Lista de usuários.
       - Exemplo de Resposta:
-      ```bash
-      json
+      ```json
       [
         {
           "id": "uuid",
@@ -119,71 +120,227 @@
           "email": "email@example.com",
           "data_cadastro": "2024-10-14T12:00:00Z"
         }
-      ]
+      ] 
       ```
 
-  **-	GET /users/{id}** 
+  **-	GET /users/{id}**
     - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
     - Autenticação: Bearer Token.
     - Resposta:
-      - 200 OK: Detalhes do usuário. Exemplo de Resposta: 
-      ```bash
-        json
-        {
-          "id": "uuid",
-          "nome": "Nome do Usuário",
-          "email": "email@example.com",
-          "data_cadastro": "2024-10-14T12:00:00Z"
-        }
+      - 200 OK: Detalhes do usuário. Exemplo de Resposta:
+      ```json
+      {
+        "id": "uuid",
+        "nome": "Nome do Usuário",
+        "email": "email@example.com",
+        "data_cadastro": "2024-10-14T12:00:00Z"
+      } 
       ```
       - 404 Not Found: Usuário não encontrado.
-
-  **-	POST /users**
+  
+  **-POST /users**
     - Descrição: Cadastra um novo usuário.
     - Autenticação: Não é necessária.
     - Parâmetros (JSON):
-    ```bash
-        json
-        {
-          "nome": "Nome do Usuário",
-          "email": "email@example.com",
-          "senha": "password123"
-        }       
+    ```json
+    {
+      "nome": "Nome do Usuário",
+      "email": "email@example.com",
+      "senha": "password123"
+    } 
     ```
     - Resposta:
       - 201 Created: Usuário criado com sucesso.
       - 400 Bad Request: E-mail já registrado.
+  
+  **-PUT /users/{id}**
+    - Descrição: Atualiza os dados de um usuário específico de acordo com o ID do usuário.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "nome": "Novo Nome",
+      "email": "novoemail@example.com"
+    } 
+    ```
+    - Resposta:
+      - 200 OK: Usuário atualizado com sucesso.
+      - 404 Not Found: Usuário não encontrado.
 
-  -	PUT /users/{id}: Atualiza os dados de um usuário específico de acordo com o ID do usuário;
-  -	DELETE /users/{id}: Deleta os dados de um usuário específico de acordo com ID do usuário;
-  - POST /users/login: Autentica um usuário e retorna o token JWT.
+  **-DELETE /users/{id}**
+    - Descrição: Deleta os dados de um usuário específico de acordo com o ID do usuário.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 204 No Content.
+      - 404 Not Found: Usuário não encontrado.
+  
+  **-POST /users/login**
+    - Descrição: Autentica um usuário e retorna o token JWT.
+    - Autenticação: Não é necessária.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "email": "email@example.com",
+      "senha": "password123"
+    }
+    ```
+    - Resposta:
+      - 200 OK: Token JWT retornado.
+      - 401 Unauthorized: Credenciais inválidas.
+  
+2. Anúncios :heavy_check_mark:
+   
+  **- GET /exchanges**
+    - Descrição: Retorna todos os anúncios.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de objetos JSON.
+  
 
+  **-GET /exchanges/{id}**
+    - Descrição: Retorna um anúncio específico de acordo com o ID do anúncio.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Detalhes do anúncio (objeto em JSON).
+      - 404 Not Found: Anúncio não encontrado.
+  
+  **-GET /exchanges/users/{id_user}**
+    - Descrição: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de objetos JSON.
+  
+  **-POST /exchanges**
+    - Descrição: Cria um novo anúncio.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "titulo": "Título do Anúncio",
+      "titulo_livro_oferecido": "Livro Oferecido",
+      "titulo_livro_solicitado": "Livro Solicitado",
+      "descricao": "Descrição"
+    }
+    ```
+    - Resposta:
+      - 201 Created: Anúncio criado com sucesso.
 
-1. **Anuncios:** :heavy_check_mark:
-  -	GET /exchanges: Retorna todos os anúncios;
-  -	GET /exchanges/{id}: Retorna um anúncio específico de acordo com o ID do anúncio;
-  -	GET /exchanges/users/{id_user}: Retorna todos os anúncios de um usuário específico de acordo com o ID do usuário; 
-  -	POST /exchanges: Cria um novo anúncio;
-  -	PATH /exchanges/state/{id}: Alterna o estado de um anúncio (de ativo para inativo e vice-versa) e insere o valor da “data_conclusao” quando altera para inativo;
-  -	PUT /exchanges/{id}: Atualiza os dados de um anúncio específico de acordo com o ID do anúncio;
-  -	DELETE /exchanges/{id}: Deleta os dados de um anúncio específico de acordo com o ID do anúncio.
+  **- PATCH /exchanges/state/{id}**
+    - Descrição: Alterna o estado de um anúncio (de ativo para inativo e vice-versa) e insere o valor da "data_conclusao" quando o anúncio é inativado.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Estado alterado com sucesso.
+      - 404 Not Found: Anúncio não encontrado.
+  
+  **-PUT /exchanges/{id}**
+    - Descrição: Atualiza os dados de um anúncio específico.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "titulo": "Novo Título",
+      "descricao": "Nova Descrição"
+    }
+    ```
+    - Resposta:
+      - 200 OK: Objeto JSON.
+      - 404 Not Found: Anúncio não encontrado.
+  
+  **-DELETE /exchanges/{id}**
+    - Descrição: Deleta um anúncio específico.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 204 No Content.
+      - 404 Not Found: Anúncio não encontrado.
+  
+3. Mensagens :heavy_check_mark:
+   
+  **-GET /messages/{id}**
+    - Descrição: Retorna uma mensagem específica.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Objeto JSON.
+      - 404 Not Found: Mensagem não encontrada.
+  
+  **-GET /messages/all**
+    - Descrição: Retorna todas as conversas relacionadas a um usuário.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de objetos JSON.
+  
+  **-GET /messages/conversation/{usuarioRemetenteId}/{usuarioDestinatarioId}**
+    - Descrição: Retorna todas as mensagens trocadas entre dois usuários específicos.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de objetos JSON.
 
+  **-POST /messages**
+    - Descrição: Envia uma mensagem referente a um anúncio específico.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "usuario_destinatario_id": "uuid",
+      "texto": "Conteúdo da mensagem"
+    }
+    ```
+    - Resposta:
+      - 201 Created: Mensagem enviada com sucesso.
+  
+  **-PATCH /messages/{id}/read**
+    - Descrição: Marca uma mensagem como lida (altera o campo "lido" de false para true).
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Mensagem marcada como lida.
+      - 404 Not Found: Mensagem não encontrada.
 
+4. Avaliações :heavy_check_mark:
+   
+  **-POST /reviews**
+    - Descrição: Cria uma avaliação referente a um anúncio específico.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "anuncio_id": "uuid",
+      "nota": 5,
+      "comentario": "Ótima troca"
+    }
+    ```
+    - Resposta:
+      - 201 Created: Objeto JSON.
 
-2. **Mensagens:** :heavy_check_mark:
-  -	GET messages/{id}: Retorna uma mensagem especifica;
-  - GET messages/all: Retorna todas as conversas relacionadas a um usuário;
-  - GET messages/conversation/{usuarioRemetenteId}/{usuarioDestinatarioId}: todas as mensagens trocadas entre dois usuários específicos;
-  -	POST /messages: Envia mensagens referentes a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body). Tem relacionamento com usuários (um usuário envia para outro usuário);
-  -	PATH /messages/{id}/read: Marca mensagem como lida (altera "lido: FALSE" para "lido: TRUE").
+  **-GET /reviews/{id_anuncio}/exchanges**
+    - Descrição: Retorna todas as avaliações de um anúncio específico.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Lista de objetos JSON.
+  
+  **-PATCH /reviews/{id}/like**
+    - Descrição: Curte uma avaliação (incrementa o campo qtd_like).
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 200 OK: Avaliação curtida com sucesso.
+  
+  **-PUT /reviews/{id}**
+    - Descrição: Altera os dados de uma avaliação específica.
+    - Autenticação: Bearer Token.
+    - Parâmetros (JSON):
+    ```json
+    {
+      "nota": 4,
+      "comentario": "Boa experiência"
+    }
+    ```
+    - Resposta:
+      - 200 OK: Objeto JSON.
+  
+  **-DELETE /reviews/{id}**
+    - Descrição: Deleta uma avaliação específica.
+    - Autenticação: Bearer Token.
+    - Resposta:
+      - 204 No Content.
 
-
-3. **Avaliacoes:** :heavy_check_mark:
-  -	POST /reviews: Cria uma avaliação referente a um anúncio específico de acordo com o ID do anúncio (ID do anúncio deve ser passado no body);
-  -	GET /reviews/{id_anuncio}/exchanges: Retorna todas as avaliações referentes a um anúncio específico de acordo com o ID do anúncio;
-  -	PATH /reviews/{id}/like: Curte uma avaliação (altera o campo qtd_like);
-  -	PUT /reviews/{id}: Altera os dados de uma avaliação específica de acordo com ID da avaliação;
-  -	DELETE /reviews/{id}: Deleta os dados de uma avaliação específica de acordo com ID da avaliação.
 
 
 ## Instação das depedências :arrow_down_small:
