@@ -359,6 +359,11 @@ json
 
 ```bash
 $ npm install
+```
+
+## Iniciação e migration Database :file_folder:
+
+```bash
 $ npx prisma generate
 $ npx prisma migrate dev --name init
 ```
