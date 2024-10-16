@@ -129,6 +129,7 @@ json
   - Descrição: Retorna um usuário específico de acordo com o ID do usuário.
   - Autenticação: Bearer Token.
   - Resposta:
+    - 404 Not Found: Usuário não encontrado.
     - 200 OK: Detalhes do usuário. Exemplo de Resposta:
 ```
 json
@@ -139,7 +140,6 @@ json
         "data_cadastro": "2024-10-14T12:00:00Z"
       } 
 ```
-      - 404 Not Found: Usuário não encontrado.
   
   **-POST /users**
   - Descrição: Cadastra um novo usuário.
