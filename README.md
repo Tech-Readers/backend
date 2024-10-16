@@ -1,4 +1,3 @@
-atualize e gere o README.md:
 <h1>Conectando Leitores</h1> 
 
 <p align="center">
@@ -89,6 +88,8 @@ atualize e gere o README.md:
 ```
 
 
+
+
 **Descrição:** :heavy_check_mark:
 
 1. **Models:** Responsáveis por definir a estrutura dos dados e interagir com o banco de dados. Por exemplo,  o Prisma ORM para a interação com o banco de dados.
@@ -112,7 +113,8 @@ atualize e gere o README.md:
     - Resposta:
       - 200 OK: Lista de usuários.
       - Exemplo de Resposta:
-      ```json
+      ```plaintext
+      json
       [
         {
           "id": "uuid",
@@ -128,7 +130,8 @@ atualize e gere o README.md:
     - Autenticação: Bearer Token.
     - Resposta:
       - 200 OK: Detalhes do usuário. Exemplo de Resposta:
-      ```json
+      ```plaintext
+      json
       {
         "id": "uuid",
         "nome": "Nome do Usuário",
@@ -187,7 +190,8 @@ atualize e gere o README.md:
     - Resposta:
       - 200 OK: Token JWT retornado.
       - 401 Unauthorized: Credenciais inválidas.
-  
+
+
 2. Anúncios :heavy_check_mark:
    
   **- GET /exchanges**
@@ -342,14 +346,12 @@ atualize e gere o README.md:
       - 204 No Content.
 
 
-
 ## Instação das depedências :arrow_down_small:
 
 ```bash
 $ npm install
 $ npx prisma generate
 $ npx prisma migrate dev --name init
-
 ```
 
 ## Executar app :arrow_forward:
